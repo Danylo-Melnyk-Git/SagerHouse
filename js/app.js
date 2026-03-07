@@ -57,6 +57,11 @@ const translations = {
         'feature.shower': 'Modern Shower',
         'feature.sofa-bed': 'Sofa Bed (1 additional guest)',
         
+        'sunna.title': 'Sunna – Coming Soon',
+        'sunna.subtitle': 'Exciting new wellness experiences in development',
+        'sunna.coming-soon': 'Coming Soon',
+        'sunna.hint': 'Scroll horizontally to explore',
+        
         'availability.title': 'Check Availability',
         'availability.subtitle': 'Find your perfect dates for an unforgettable stay.',
         'availability.placeholder': 'Real-time calendar synchronization for live availability.',
@@ -196,6 +201,11 @@ const translations = {
         'feature.heating': 'Elektroheizung',
         'feature.shower': 'Modernes Duschbad',
         'feature.sofa-bed': 'Schlafsofa (1 zusätzlicher Gast)',
+        
+        'sunna.title': 'Sunna – In Kürze verfügbar',
+        'sunna.subtitle': 'Spannende neue Wellness-Erlebnisse in Entwicklung',
+        'sunna.coming-soon': 'In Kürze verfügbar',
+        'sunna.hint': 'Horizontal scrollen zum Erkunden',
         
         'availability.title': 'Verfügbarkeit prüfen',
         'availability.subtitle': 'Finden Sie Ihre perfekten Termine für einen unvergesslichen Aufenthalt.',
@@ -337,6 +347,11 @@ const translations = {
         'feature.shower': 'Сучасна ванна',
         'feature.sofa-bed': 'Диван-ліжко (1 додаткова людина)',
         
+        'sunna.title': 'Sunna – Невдовзи',
+        'sunna.subtitle': 'Захопливі нові вельнес-досвіди у розробці',
+        'sunna.coming-soon': 'Невдовзи',
+        'sunna.hint': 'Гортайте горизонтально для дослідження',
+        
         'availability.title': 'Перевірити доступність',
         'availability.subtitle': 'Знайдіть ідеальні дати для незабутнього перебування.',
         'availability.placeholder': 'Синхронізація календаря в реальному часі для поточної доступності.',
@@ -476,6 +491,11 @@ const translations = {
         'feature.heating': 'Электрическое отопление',
         'feature.shower': 'Современный душ',
         'feature.sofa-bed': 'Диван-кровать (1 дополнительно лицо)',
+        
+        'sunna.title': 'Sunna – Скоро',
+        'sunna.subtitle': 'Захватывающие новые впечатления в области оздоровления в разработке',
+        'sunna.coming-soon': 'Скоро',
+        'sunna.hint': 'Прокрутите горизонтально для изучения',
         
         'availability.title': 'Проверить доступность',
         'availability.subtitle': 'Найдите идеальные даты для незабываемого пребывания.',
