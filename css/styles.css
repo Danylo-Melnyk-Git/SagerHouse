@@ -105,30 +105,138 @@ html {
 }
 
 .sunna-slider::-webkit-scrollbar {
-    height: 6px;
+    height: 8px;
 }
 
 .sunna-slider::-webkit-scrollbar-track {
-    background: transparent;
+    background: rgb(245, 245, 244);
+    border-radius: 10px;
 }
 
 .sunna-slider::-webkit-scrollbar-thumb {
     background-color: rgb(161, 140, 119);
-    border-radius: 3px;
+    border-radius: 10px;
+    border: 2px solid rgb(245, 245, 244);
 }
 
 .sunna-slider::-webkit-scrollbar-thumb:hover {
     background-color: rgb(120, 113, 108);
 }
 
+/* Custom Scrollbar Global */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(161, 140, 119) rgb(245, 245, 244);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgb(245, 245, 244);
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(161, 140, 119);
+    border-radius: 10px;
+    border: 2px solid rgb(245, 245, 244);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(120, 113, 108);
+}
+
 .sunna-card {
     scroll-snap-align: start;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
 }
 
 .sunna-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* Animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse-soft {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Apply animations to elements */
+[data-gallery-item] {
+    animation: scaleIn 0.5s ease-out forwards;
+}
+
+[data-gallery-item]:nth-child(1) { animation-delay: 0.1s; }
+[data-gallery-item]:nth-child(2) { animation-delay: 0.15s; }
+[data-gallery-item]:nth-child(3) { animation-delay: 0.2s; }
+[data-gallery-item]:nth-child(4) { animation-delay: 0.25s; }
+[data-gallery-item]:nth-child(5) { animation-delay: 0.3s; }
+[data-gallery-item]:nth-child(6) { animation-delay: 0.35s; }
+[data-gallery-item]:nth-child(7) { animation-delay: 0.4s; }
+[data-gallery-item]:nth-child(8) { animation-delay: 0.45s; }
+
+.sunna-card {
+    animation: slideInUp 0.6s ease-out forwards;
+}
+
+.sunna-card:nth-child(1) { animation-delay: 0.1s; }
+.sunna-card:nth-child(2) { animation-delay: 0.15s; }
+.sunna-card:nth-child(3) { animation-delay: 0.2s; }
+.sunna-card:nth-child(4) { animation-delay: 0.25s; }
+.sunna-card:nth-child(5) { animation-delay: 0.3s; }
+.sunna-card:nth-child(6) { animation-delay: 0.35s; }
+.sunna-card:nth-child(7) { animation-delay: 0.4s; }
+
+/* Button and Link Animations */
+button, a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(0);
 }
 
 /* Responsive Gallery */
