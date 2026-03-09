@@ -42,6 +42,23 @@ const translations = {
         'apartment.coming-soon': 'Coming Soon',
         'apartment.not-available': 'Currently not available for booking. We are preparing it for your comfort.',
         
+        // Apartment 1 - The Sager Apartment
+        'apartment.apt1-title': 'The Sager Apartment',
+        'apartment.apt1-size': '67 m²',
+        'apartment.apt1-sleeps': 'Sleeps 4 people',
+        
+        // Apartment 2
+        'apartment.apt2-title': 'Apartment 2',
+        'apartment.apt2-size': '70 m²',
+        'apartment.apt2-sleeps': 'Sleeps 5 people',
+        'apartment.apt2-amenities': '1 Double Bedroom, Sofa Bed (1 additional guest), Fully Equipped Kitchen, Dishwasher, Coffee Machine, High-Speed WiFi, Separate Entrance, Balcony with Views, Electric Heating',
+        
+        // Apartment 3
+        'apartment.apt3-title': 'Apartment 3',
+        'apartment.apt3-size': '75 m²',
+        'apartment.apt3-sleeps': 'Sleeps 6 people',
+        'apartment.apt3-amenities': '2 Bedrooms, Sofa Bed (2 additional guests), Fully Equipped Kitchen, Dishwasher, Coffee Machine, High-Speed WiFi, Separate Entrance, Fireplace, Electric Heating',
+        
         'feature.bedroom': '1 Double Bedroom',
         'feature.sleeps': 'Sleeps 4 people',
         'feature.size': '67 m²',
@@ -56,6 +73,11 @@ const translations = {
         'feature.heating': 'Electric Heating',
         'feature.shower': 'Modern Shower',
         'feature.sofa-bed': 'Sofa Bed (1 additional guest)',
+        'feature.sofa-bed-1': 'Sofa Bed (1 additional guest)',
+        'feature.sofa-bed-2': 'Sofa Bed (2 additional guests)',
+        'feature.bedrooms': '2 Bedrooms',
+        'feature.balcony': 'Balcony with Views',
+        'feature.fireplace': 'Fireplace',
         
         'sunna.hint': 'Scroll horizontally to explore',
         
@@ -84,6 +106,10 @@ const translations = {
         'why.parking-desc': 'Reserved space for our guests',
         'why.kitchen': 'Fully Equipped',
         'why.kitchen-desc': 'Modern kitchen with all amenities',
+        'why.family': 'Family Friendly',
+        'why.family-desc': 'Perfect retreat for all ages',
+        'why.views': 'Mountain Views',
+        'why.views-desc': 'Breathtaking Alpine Scenery',
         'why.comfort': 'Maximum Comfort',
         'why.comfort-desc': 'Massage chair and modern furniture',
         'why.quiet': 'Peaceful Area',
@@ -198,6 +224,11 @@ const translations = {
         'feature.heating': 'Elektroheizung',
         'feature.shower': 'Modernes Duschbad',
         'feature.sofa-bed': 'Schlafsofa (1 zusätzlicher Gast)',
+        'feature.sofa-bed-1': 'Schlafsofa (1 zusätzlicher Gast)',
+        'feature.sofa-bed-2': 'Schlafsofa (2 zusätzliche Gäste)',
+        'feature.bedrooms': '2 Schlafzimmer',
+        'feature.balcony': 'Balkon mit Aussicht',
+        'feature.fireplace': 'Kamin',
         
         'sunna.hint': 'Horizontal scrollen zum Erkunden',
         
@@ -226,6 +257,10 @@ const translations = {
         'why.parking-desc': 'Reservierter Platz für unsere Gäste',
         'why.kitchen': 'Vollständig ausgestattet',
         'why.kitchen-desc': 'Moderne Küche mit allen Annehmlichkeiten',
+        'why.family': 'Familienfreundlich',
+        'why.family-desc': 'Perfekter Rückzugsort für alle Altersgruppen',
+        'why.views': 'Bergblick',
+        'why.views-desc': 'Atemberaubende alpine Landschaft',
         'why.comfort': 'Maximaler Komfort',
         'why.comfort-desc': 'Massagesessel und modernes Mobiliar',
         'why.quiet': 'Ruhige Gegend',
@@ -340,6 +375,11 @@ const translations = {
         'feature.heating': 'Електричне опалення',
         'feature.shower': 'Сучасна ванна',
         'feature.sofa-bed': 'Диван-ліжко (1 додаткова людина)',
+        'feature.sofa-bed-1': 'Диван-ліжко (1 додаткова людина)',
+        'feature.sofa-bed-2': 'Диван-ліжко (2 додаткові гості)',
+        'feature.bedrooms': '2 спальні',
+        'feature.balcony': 'Балкон з видом',
+        'feature.fireplace': 'Камін',
         
         'sunna.hint': 'Гортайте горизонтально для дослідження',
         
@@ -368,6 +408,10 @@ const translations = {
         'why.parking-desc': 'Зарезервоване місце для наших гостей',
         'why.kitchen': 'Повністю обладнано',
         'why.kitchen-desc': 'Сучасна кухня з усіма зручностями',
+        'why.family': 'Сімейний',
+        'why.family-desc': 'Ідеальне місце для всіх вікових груп',
+        'why.views': 'Вид на гори',
+        'why.views-desc': 'Захоплюючі альпійські краєвиди',
         'why.comfort': 'Максимальний комфорт',
         'why.comfort-desc': 'Масажне крісло та сучасні меблі',
         'why.quiet': 'Спокійна місцевість',
@@ -482,6 +526,11 @@ const translations = {
         'feature.heating': 'Электрическое отопление',
         'feature.shower': 'Современный душ',
         'feature.sofa-bed': 'Диван-кровать (1 дополнительно лицо)',
+        'feature.sofa-bed-1': 'Диван-кровать (1 дополнительно лицо)',
+        'feature.sofa-bed-2': 'Диван-кровать (2 дополнительных гостя)',
+        'feature.bedrooms': '2 спальни',
+        'feature.balcony': 'Балкон с видом',
+        'feature.fireplace': 'Камин',
         
         'sunna.hint': 'Прокрутите горизонтально для изучения',
         
@@ -510,6 +559,10 @@ const translations = {
         'why.parking-desc': 'Зарезервированное место для наших гостей',
         'why.kitchen': 'Полностью оборудовано',
         'why.kitchen-desc': 'Современная кухня со всеми удобствами',
+        'why.family': 'Для всей семьи',
+        'why.family-desc': 'Идеальное место для всех возрастов',
+        'why.views': 'Вид на горы',
+        'why.views-desc': 'Впечатляющие альпийские пейзажи',
         'why.comfort': 'Максимальный комфорт',
         'why.comfort-desc': 'Массажное кресло и современная мебель',
         'why.quiet': 'Спокойное место',
@@ -578,6 +631,9 @@ const translations = {
     }
 };
 
+// Make translations inspectable from the console (useful for debugging)
+window.translations = translations;
+
 // ========================================
 // I18N Functions (Supports 4 Languages)
 // ========================================
@@ -585,6 +641,8 @@ const translations = {
 let currentLanguage = localStorage.getItem('sagerhouse_language') || 'en';
 
 function initI18n() {
+    console.debug('[i18n] initI18n start (currentLanguage)', currentLanguage);
+
     if (translations[currentLanguage]) {
         localStorage.setItem('sagerhouse_language', currentLanguage);
     } else {
@@ -625,6 +683,10 @@ function updatePageTranslations() {
         const key = el.getAttribute('data-i18n');
         const translation = translations[currentLanguage][key] || translations['en'][key] || key;
         
+        if (!translations[currentLanguage][key] && !translations['en'][key]) {
+            console.warn('[i18n] missing translation key', key, 'for language', currentLanguage);
+        }
+
         if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
             if (el.hasAttribute('placeholder')) {
                 el.placeholder = translation;
@@ -647,6 +709,48 @@ function updateLanguageButtons() {
             btn.classList.add('active');
         } else {
             btn.classList.remove('active');
+        }
+    });
+}
+
+// ========================================
+// Mobile navigation (phone/tablet)
+// ========================================
+
+function initMobileMenu() {
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('mobile-menu-icon');
+
+    if (!btn || !menu || !icon) return;
+
+    const setMenuState = (isOpen) => {
+        btn.setAttribute('aria-expanded', String(isOpen));
+        menu.classList.toggle('hidden', !isOpen);
+        icon.setAttribute('icon', isOpen ? 'solar:close-linear' : 'solar:menu-list-linear');
+    };
+
+    const closeMenu = () => setMenuState(false);
+    const toggleMenu = () => setMenuState(menu.classList.contains('hidden'));
+
+    btn.addEventListener('click', (event) => {
+        event.stopPropagation();
+        toggleMenu();
+    });
+
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => closeMenu());
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && !btn.contains(event.target)) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeMenu();
         }
     });
 }
@@ -739,6 +843,99 @@ function enhanceHeroImage() {
 }
 
 // ========================================
+// Booking Form & Telegram integration
+// ========================================
+
+const TELEGRAM_BOT_TOKEN = '8614579945:AAGgdL67OL8UcJF5gClNsZSPc1z_AVqnUME';
+// Replace with your Telegram chat id (user or group). To find it, send a message to the bot and
+// call https://api.telegram.org/bot<token>/getUpdates or use a helper bot like @userinfobot.
+const TELEGRAM_CHAT_ID = '5733738720'; // e.g. '123456789' or '-1001234567890'
+
+function escapeMarkdown(text) {
+    return text.replace(/([_*\[\]()~`>#+\-=|{}.!])/g, '\\$1');
+}
+
+function getTelegramSendMessageUrl() {
+    return `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+}
+
+function sendTelegramMessage(text) {
+    if (!TELEGRAM_BOT_TOKEN || TELEGRAM_BOT_TOKEN.includes('TOKEN')) {
+        return Promise.reject(new Error('Telegram bot token not configured.'));
+    }
+    if (!TELEGRAM_CHAT_ID) {
+        return Promise.reject(new Error('Telegram chat id not configured.'));
+    }
+
+    return fetch(getTelegramSendMessageUrl(), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text,
+            parse_mode: 'MarkdownV2',
+        }),
+    }).then(res => res.json());
+}
+
+function initBookingForm() {
+    const form = document.getElementById('booking-form');
+    const statusEl = document.getElementById('booking-status');
+    if (!form || !statusEl) return;
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        statusEl.textContent = '';
+        statusEl.className = 'mt-4 text-sm';
+
+        const data = new FormData(form);
+        const firstName = (data.get('first-name') || '').toString().trim();
+        const lastName = (data.get('last-name') || '').toString().trim();
+        const email = (data.get('email') || '').toString().trim();
+        const checkIn = (data.get('check-in') || '').toString();
+        const checkOut = (data.get('check-out') || '').toString();
+        const guests = (data.get('guests') || '').toString();
+        const message = (data.get('message') || '').toString().trim();
+
+        if (!firstName || !lastName || !email) {
+            statusEl.textContent = 'Please provide your name and email.';
+            statusEl.classList.add('text-red-600');
+            return;
+        }
+
+        const payload = [
+            '*New booking request*',
+            `*Name:* ${escapeMarkdown(`${firstName} ${lastName}`)}`,
+            `*Email:* ${escapeMarkdown(email)}`,
+            checkIn ? `*Check‑in:* ${escapeMarkdown(checkIn)}` : '',
+            checkOut ? `*Check‑out:* ${escapeMarkdown(checkOut)}` : '',
+            guests ? `*Guests:* ${escapeMarkdown(guests)}` : '',
+            message ? `*Message:* ${escapeMarkdown(message)}` : '',
+        ].filter(Boolean).join('\n');
+
+        statusEl.textContent = 'Sending request…';
+        statusEl.classList.add('text-stone-500');
+
+        try {
+            const result = await sendTelegramMessage(payload);
+
+            if (result.ok) {
+                statusEl.textContent = 'Request sent! We will contact you soon.';
+                statusEl.className = 'mt-4 text-sm text-emerald-700';
+                form.reset();
+            } else {
+                throw new Error(result.description || 'Telegram API error');
+            }
+        } catch (err) {
+            console.error('Telegram send error', err);
+            statusEl.textContent = `Ошибка отправки: ${err.message || err}`;
+            statusEl.className = 'mt-4 text-sm text-red-600';
+        }
+    });
+}
+
+// ========================================
 // Initialization
 // ========================================
 
@@ -748,6 +945,9 @@ function enhanceHeroImage() {
 function initializeApp() {
     // Initialize i18n
     initI18n();
+
+    // Setup mobile navigation (hamburger menu)
+    initMobileMenu();
     
     // Initialize gallery
     initGallery();
@@ -757,6 +957,9 @@ function initializeApp() {
     
     // Enhance hero image
     enhanceHeroImage();
+
+    // Setup booking form handler (Telegram)
+    initBookingForm();
     
     // Log initialization
     console.log('Sager House app initialized');

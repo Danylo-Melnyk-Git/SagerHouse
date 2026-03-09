@@ -30,7 +30,7 @@
     object-fit: cover;
     object-position: center;
     display: block;
-    filter: blur(2px) brightness(0.95);
+    filter: brightness(0.95);
 }
 
 /* Gallery Grid Enhanced */

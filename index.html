@@ -66,7 +66,13 @@
     <header class="sticky top-0 z-50 border-b border-stone-200/60 bg-stone-50/80 backdrop-blur-md">
         <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
             <a href="#" class="text-base font-medium tracking-tighter text-stone-900">SAGERHOUSE</a>
-            
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" type="button" class="md:hidden -mr-2 inline-flex items-center justify-center rounded-md p-2 text-stone-600 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-stone-900" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <iconify-icon id="mobile-menu-icon" icon="solar:menu-list-linear" class="text-2xl"></iconify-icon>
+            </button>
+
             <nav class="hidden md:flex items-center gap-x-8 text-sm font-normal text-stone-600">
                 <a href="#apartments" class="hover:text-stone-900 transition-colors" data-i18n="header.apartments">Apartments</a>
                 <a href="#prices" class="hover:text-stone-900 transition-colors" data-i18n="header.prices">Prices</a>
@@ -88,6 +94,34 @@
                     <span class="lang-btn" data-lang-switch="ru">RU</span>
                 </div>
                 <a href="#contact" class="rounded-md bg-stone-900 px-4 py-2 text-sm font-medium text-stone-50 shadow-sm hover:bg-stone-800 transition-colors" data-i18n="header.book-now">Book Now</a>
+            </div>
+        </div>
+
+        <!-- Mobile navigation panel -->
+        <div id="mobile-menu" class="md:hidden hidden border-t border-stone-200 bg-white">
+            <div class="px-6 py-5">
+                <nav class="flex flex-col gap-2 text-sm font-medium text-stone-700">
+                    <a href="#apartments" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.apartments">Apartments</a>
+                    <a href="#prices" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.prices">Prices</a>
+                    <a href="#availability" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.availability">Availability</a>
+                    <a href="#gallery" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.gallery">Gallery</a>
+                    <a href="#location" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.location">Location</a>
+                    <a href="#faq" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.faq">FAQ</a>
+                    <a href="#contact" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.contact">Contact</a>
+                </nav>
+
+                <div class="mt-5 flex flex-col gap-3 border-t border-stone-200 pt-5">
+                    <div class="flex flex-wrap items-center gap-2 text-xs font-medium text-stone-500">
+                        <span class="lang-btn active" data-lang-switch="en">EN</span>
+                        <span class="mx-1">/</span>
+                        <span class="lang-btn" data-lang-switch="de">DE</span>
+                        <span class="mx-1">/</span>
+                        <span class="lang-btn" data-lang-switch="uk">UK</span>
+                        <span class="mx-1">/</span>
+                        <span class="lang-btn" data-lang-switch="ru">RU</span>
+                    </div>
+                    <a href="#contact" class="block rounded-md bg-stone-900 px-4 py-2 text-center text-sm font-medium text-stone-50 hover:bg-stone-800 transition-colors" data-i18n="header.book-now">Book Now</a>
+                </div>
             </div>
         </div>
     </header>
@@ -117,7 +151,7 @@
         
         <div class="mx-auto mt-16 max-w-7xl px-6 lg:px-8">
             <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl bg-stone-100 shadow-sm ring-1 ring-stone-900/5 hero-image-container">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=2000" alt="Austrian Alps Mountain View" class="h-full w-full object-cover object-center">
+                <img src="images/mauntin.jpg" alt="Austrian Alps Mountain View" class="h-full w-full object-cover object-center">
             </div>
         </div>
     </section>
@@ -145,15 +179,15 @@
             <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                 
                 <!-- Active Apartment: The Sager Apartment -->
-                <article class="flex flex-col items-start bg-white rounded-2xl ring-1 ring-stone-900/5 shadow-sm overflow-hidden transition-shadow hover:shadow-md lg:col-span-2">
+                <article class="flex flex-col items-start bg-white rounded-2xl ring-1 ring-stone-900/5 shadow-sm overflow-hidden transition-shadow hover:shadow-md">
                     <div class="w-full aspect-[4/3] overflow-hidden">
                         <img src="images/798174623.jpg" alt="The Sager Apartment" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8 flex flex-col flex-1 w-full">
-                        <h3 class="text-xl font-medium tracking-tight text-stone-900" data-i18n="apartment.one-bedroom">The Sager Apartment</h3>
+                        <h3 class="text-xl font-medium tracking-tight text-stone-900" data-i18n="apartment.apt1-title">The Sager Apartment</h3>
                         <div class="mt-4 flex flex-wrap gap-4 text-xs text-stone-500">
-                            <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span data-i18n="feature.size">67 m²</span></span>
-                            <span class="flex items-center gap-1"><iconify-icon icon="solar:users-group-rounded-linear" class="text-base"></iconify-icon> <span data-i18n="feature.sleeps">Sleeps 4 people</span></span>
+                            <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span data-i18n="apartment.apt1-size">67 m²</span></span>
+                            <span class="flex items-center gap-1"><iconify-icon icon="solar:users-group-rounded-linear" class="text-base"></iconify-icon> <span data-i18n="apartment.apt1-sleeps">Sleeps 4 people</span></span>
                         </div>
                         
                         <h4 class="mt-6 text-sm font-medium text-stone-900" data-i18n="apartment.features-title">Amenities</h4>
@@ -184,21 +218,21 @@
                         </div>
                     </div>
                     <div class="p-8 flex flex-col flex-1 w-full">
-                        <h3 class="text-xl font-medium tracking-tight text-stone-900" data-i18n="apartment.one-bedroom">Apartment 2</h3>
+                        <h3 class="text-xl font-medium tracking-tight text-stone-900" data-i18n="apartment.apt2-title">Apartment 2</h3>
                         <div class="mt-4 flex flex-wrap gap-4 text-xs text-stone-500">
-                            <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span data-i18n="feature.size">70 m²</span></span>
-                            <span class="flex items-center gap-1"><iconify-icon icon="solar:users-group-rounded-linear" class="text-base"></iconify-icon> <span data-i18n="feature.sleeps">Sleeps 5 people</span></span>
+                            <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span data-i18n="apartment.apt2-size">70 m²</span></span>
+                            <span class="flex items-center gap-1"><iconify-icon icon="solar:users-group-rounded-linear" class="text-base"></iconify-icon> <span data-i18n="apartment.apt2-sleeps">Sleeps 5 people</span></span>
                         </div>
                         <h4 class="mt-6 text-sm font-medium text-stone-900" data-i18n="apartment.features-title">Amenities</h4>
                         <ul class="mt-4 space-y-2 text-sm text-stone-600 flex-1">
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.bedroom">1 Double Bedroom</span></li>
-                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.sofa-bed">Sofa Bed (1 additional guest)</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.sofa-bed-1">Sofa Bed (1 additional guest)</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.kitchen">Fully Equipped Kitchen</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.dishwasher">Dishwasher</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.coffee-machine">Coffee Machine</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.wifi">High-Speed WiFi</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.separate-entrance">Separate Entrance</span></li>
-                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.massage-chair">Massage Armchair</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.balcony">Balcony with Views</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.heating">Electric Heating</span></li>
                         </ul>
                         <button disabled class="mt-8 block w-full text-center rounded-md bg-stone-300 px-4 py-2.5 text-sm font-medium text-stone-500 cursor-not-allowed" data-i18n="apartment.request">Coming Soon</button>
@@ -217,24 +251,90 @@
                         </div>
                     </div>
                     <div class="p-8 flex flex-col flex-1 w-full">
-                        <h3 class="text-xl font-medium tracking-tight text-stone-900" data-i18n="apartment.one-bedroom">Apartment 3</h3>
+                        <h3 class="text-xl font-medium tracking-tight text-stone-900" data-i18n="apartment.apt3-title">Apartment 3</h3>
                         <div class="mt-4 flex flex-wrap gap-4 text-xs text-stone-500">
-                            <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span data-i18n="feature.size">75 m²</span></span>
-                            <span class="flex items-center gap-1"><iconify-icon icon="solar:users-group-rounded-linear" class="text-base"></iconify-icon> <span data-i18n="feature.sleeps">Sleeps 6 people</span></span>
+                            <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span data-i18n="apartment.apt3-size">75 m²</span></span>
+                            <span class="flex items-center gap-1"><iconify-icon icon="solar:users-group-rounded-linear" class="text-base"></iconify-icon> <span data-i18n="apartment.apt3-sleeps">Sleeps 6 people</span></span>
                         </div>
                         <h4 class="mt-6 text-sm font-medium text-stone-900" data-i18n="apartment.features-title">Amenities</h4>
                         <ul class="mt-4 space-y-2 text-sm text-stone-600 flex-1">
-                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.bedroom">1 Double Bedroom</span></li>
-                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.sofa-bed">Sofa Bed (1 additional guest)</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.bedrooms">2 Bedrooms</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.sofa-bed-2">Sofa Bed (2 additional guests)</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.kitchen">Fully Equipped Kitchen</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.dishwasher">Dishwasher</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.coffee-machine">Coffee Machine</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.wifi">High-Speed WiFi</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.separate-entrance">Separate Entrance</span></li>
-                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.massage-chair">Massage Armchair</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.fireplace">Fireplace</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.heating">Electric Heating</span></li>
                         </ul>
                         <button disabled class="mt-8 block w-full text-center rounded-md bg-stone-300 px-4 py-2.5 text-sm font-medium text-stone-500 cursor-not-allowed" data-i18n="apartment.request">Coming Soon</button>
+                    </div>
+                </article>
+
+                <!-- Coming Soon: Apartment 4 -->
+                <article class="flex flex-col items-start bg-white rounded-2xl ring-1 ring-stone-900/5 shadow-sm overflow-hidden transition-shadow hover:shadow-md">
+                    <div class="w-full aspect-[4/3] overflow-hidden relative">
+                        <img src="images/798174616.jpg" alt="Coming Soon Apartment" class="w-full h-full object-cover blur-sm">
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <div class="text-center">
+                                <iconify-icon icon="solar:hourglass-linear" class="text-5xl text-white block mb-2"></iconify-icon>
+                                <p class="text-white text-sm font-medium">Coming Soon</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-1 w-full">
+                        <h3 class="text-xl font-medium tracking-tight text-stone-900">Apartment 4</h3>
+                        <div class="mt-4 flex flex-wrap gap-4 text-xs text-stone-500">
+                            <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span>72 m²</span></span>
+                            <span class="flex items-center gap-1"><iconify-icon icon="solar:users-group-rounded-linear" class="text-base"></iconify-icon> <span>Sleeps 5 people</span></span>
+                        </div>
+                        <h4 class="mt-6 text-sm font-medium text-stone-900">Amenities</h4>
+                        <ul class="mt-4 space-y-2 text-sm text-stone-600 flex-1">
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>2 Bedrooms</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Sofa Bed (2 additional guests)</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Fully Equipped Kitchen</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Dishwasher</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Coffee Machine</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>High-Speed WiFi</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Separate Entrance</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Balcony with Views</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Electric Heating</span></li>
+                        </ul>
+                        <button disabled class="mt-8 block w-full text-center rounded-md bg-stone-300 px-4 py-2.5 text-sm font-medium text-stone-500 cursor-not-allowed">Coming Soon</button>
+                    </div>
+                </article>
+
+                <!-- Coming Soon: Apartment 5 -->
+                <article class="flex flex-col items-start bg-white rounded-2xl ring-1 ring-stone-900/5 shadow-sm overflow-hidden transition-shadow hover:shadow-md">
+                    <div class="w-full aspect-[4/3] overflow-hidden relative">
+                        <img src="images/798174641.jpg" alt="Coming Soon Apartment" class="w-full h-full object-cover blur-sm">
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <div class="text-center">
+                                <iconify-icon icon="solar:hourglass-linear" class="text-5xl text-white block mb-2"></iconify-icon>
+                                <p class="text-white text-sm font-medium">Coming Soon</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-1 w-full">
+                        <h3 class="text-xl font-medium tracking-tight text-stone-900">Apartment 5</h3>
+                        <div class="mt-4 flex flex-wrap gap-4 text-xs text-stone-500">
+                            <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span>80 m²</span></span>
+                            <span class="flex items-center gap-1"><iconify-icon icon="solar:users-group-rounded-linear" class="text-base"></iconify-icon> <span>Sleeps 6 people</span></span>
+                        </div>
+                        <h4 class="mt-6 text-sm font-medium text-stone-900">Amenities</h4>
+                        <ul class="mt-4 space-y-2 text-sm text-stone-600 flex-1">
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>2 Bedrooms</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Sofa Bed (2 additional guests)</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Fully Equipped Kitchen</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Dishwasher</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Coffee Machine</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>High-Speed WiFi</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Separate Entrance</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Fireplace</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Electric Heating</span></li>
+                        </ul>
+                        <button disabled class="mt-8 block w-full text-center rounded-md bg-stone-300 px-4 py-2.5 text-sm font-medium text-stone-500 cursor-not-allowed">Coming Soon</button>
                     </div>
                 </article>
 
@@ -315,8 +415,8 @@
             </div>
             
             <div class="mt-8 text-xs text-stone-500 flex flex-col sm:flex-row sm:justify-center gap-4 sm:gap-8">
-                <span class="flex items-center gap-1"><iconify-icon icon="solar:info-circle-linear"></iconify-icon> Minimum stay: 3 nights</span>
-                <span class="flex items-center gap-1"><iconify-icon icon="solar:info-circle-linear"></iconify-icon> Final cleaning fee: €60 - €90</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="solar:info-circle-linear"></iconify-icon> Minimum stay: 1 night</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="solar:info-circle-linear"></iconify-icon> Cleaning fee included in price</span>
                 <span class="flex items-center gap-1"><iconify-icon icon="solar:info-circle-linear"></iconify-icon> Local tourist tax not included</span>
             </div>
 
@@ -355,7 +455,7 @@
                 <div class="flex flex-col gap-y-3 border-l border-stone-700 pl-6">
                     <iconify-icon icon="solar:users-group-two-rounded-linear" class="text-2xl text-stone-400"></iconify-icon>
                     <dt class="text-sm font-medium text-stone-100" data-i18n="why.family">Family Friendly</dt>
-                    <dd class="text-sm text-stone-400">Perfect Retreat for All Ages</dd>
+                    <dd class="text-sm text-stone-400" data-i18n="why.family-desc">Perfect Retreat for All Ages</dd>
                 </div>
                 <div class="flex flex-col gap-y-3 border-l border-stone-700 pl-6">
                     <iconify-icon icon="solar:moon-sleep-linear" class="text-2xl text-stone-400"></iconify-icon>
@@ -365,7 +465,7 @@
                 <div class="flex flex-col gap-y-3 border-l border-stone-700 pl-6">
                     <iconify-icon icon="solar:mountain-linear" class="text-2xl text-stone-400"></iconify-icon>
                     <dt class="text-sm font-medium text-stone-100" data-i18n="why.views">Mountain Views</dt>
-                    <dd class="text-sm text-stone-400">Breathtaking Alpine Scenery</dd>
+                    <dd class="text-sm text-stone-400" data-i18n="why.views-desc">Breathtaking Alpine Scenery</dd>
                 </div>
                 <div class="flex flex-col gap-y-3 border-l border-stone-700 pl-6">
                     <iconify-icon icon="solar:signpost-2-linear" class="text-2xl text-stone-400"></iconify-icon>
@@ -395,7 +495,7 @@
                 </div>
                 
                 <div class="overflow-hidden rounded-xl bg-stone-100 cursor-pointer transition-transform duration-500 hover:shadow-xl" data-gallery-item>
-                    <img src="images/gallery-snowy-peak.jpg" alt="Alpine Surroundings" data-lightbox="gallery" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1200" alt="Alpine Surroundings" data-lightbox="gallery" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
                 
                 <div class="overflow-hidden rounded-xl bg-stone-100 cursor-pointer transition-transform duration-500 hover:shadow-xl" data-gallery-item>
@@ -556,7 +656,7 @@
 
                 <!-- Booking Form Side -->
                 <div class="bg-white px-6 py-8 shadow-sm ring-1 ring-stone-900/5 sm:rounded-2xl sm:px-10">
-                    <form action="#" method="POST" class="mx-auto max-w-xl">
+                    <form id="booking-form" action="#" method="POST" class="mx-auto max-w-xl">
                         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                             <div>
                                 <label for="first-name" class="block text-sm font-medium leading-6 text-stone-900" data-i18n="contact.first-name">First name</label>
@@ -614,6 +714,7 @@
                         <div class="mt-8">
                             <button type="submit" class="block w-full rounded-md bg-stone-900 px-3.5 py-3 text-center text-sm font-medium text-stone-50 shadow-sm hover:bg-stone-800 transition-colors" data-i18n="contact.submit">Submit Request</button>
                         </div>
+                        <div id="booking-status" class="mt-4 text-sm"></div>
                     </form>
                 </div>
             </div>
@@ -679,6 +780,11 @@
     </footer>
 
     <!-- Application Script -->
-    <script src="js/app.js"></script>
+    <script src="js/app.js?v=1.1"></script>
+    <script>
+        // Debug helper: verify app.js ran and translations are exposed
+        console.log('[debug] app.js executed, window.translations:', !!window.translations);
+        console.log('[debug] why.family translation:', window.translations?.en?.['why.family']);
+    </script>
 
 </body></html>
