@@ -1,6 +1,7 @@
-/* ===================================
-   SAGER HOUSE - Custom Styles
-   =================================== */
+
+@import url('./components/calendar.css');
+@import url('./components/theme.css');
+
 
 /* Hero Section Image Fix */
 .hero-image-container {
@@ -61,36 +62,80 @@
     transform: scale(1.05);
 }
 
-/* Booking Calendar Widget */
-#calendar-widget {
-    min-height: 200px;
-    padding: 1rem;
-    background-color: rgb(248, 246, 243);
-    border-radius: 0.75rem;
-}
-
 /* i18n Classes */
 [data-i18n] {
     transition: opacity 0.2s ease;
 }
 
 /* Language Switcher */
-.lang-btn {
-    cursor: pointer;
-    transition: all 0.2s ease;
+.lang-select {
+    min-width: 4.5rem;
+    padding: 0.5rem 2rem 0.5rem 0.85rem;
+    border: 1px solid rgb(231, 229, 228);
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.92);
+    color: rgb(68, 64, 60);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, rgb(120, 113, 108) 50%), linear-gradient(135deg, rgb(120, 113, 108) 50%, transparent 50%);
+    background-position: calc(100% - 1rem) calc(50% - 0.1rem), calc(100% - 0.75rem) calc(50% - 0.1rem);
+    background-size: 0.35rem 0.35rem, 0.35rem 0.35rem;
+    background-repeat: no-repeat;
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
 }
 
-.lang-btn.active {
-    font-weight: 600;
+.lang-select:hover {
+    border-color: rgb(168, 162, 158);
     color: rgb(28, 25, 23);
 }
 
-.lang-btn:not(.active) {
-    color: rgb(161, 140, 119);
+.lang-select:focus {
+    outline: none;
+    border-color: rgb(28, 25, 23);
+    box-shadow: 0 0 0 3px rgba(28, 25, 23, 0.08);
 }
 
-.lang-btn:hover:not(.active) {
-    color: rgb(120, 113, 108);
+.lang-select-mobile {
+    width: 100%;
+    max-width: 8rem;
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid rgb(231, 229, 228);
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.92);
+    color: rgb(68, 64, 60);
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    border-color: rgb(168, 162, 158);
+    color: rgb(28, 25, 23);
+    transform: translateY(-1px);
+}
+
+.theme-toggle:focus {
+    outline: none;
+    border-color: rgb(28, 25, 23);
+    box-shadow: 0 0 0 3px rgba(28, 25, 23, 0.08);
+}
+
+.theme-toggle iconify-icon {
+    font-size: 1rem;
+}
+
+.theme-toggle-mobile {
+    width: 100%;
+    max-width: 8rem;
 }
 
 /* Smooth Scrolling (already in html) */
@@ -250,3 +295,4 @@ button:active:not(:disabled) {
         -webkit-overflow-scrolling: touch;
     }
 }
+

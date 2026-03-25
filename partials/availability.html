@@ -1,0 +1,20 @@
+<!-- 6. Availability Section -->
+    <section id="availability" class="availability-section border-t border-stone-200/60 bg-stone-100/50 py-24 sm:py-32">
+        <div class="mx-auto max-w-4xl px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-medium tracking-tight text-stone-900 sm:text-4xl" data-i18n="availability.title">Check Availability</h2>
+            <p class="mt-4 text-base font-medium text-stone-600" data-i18n="availability.subtitle">Find your perfect dates for a relaxing getaway.</p>
+            <p class="mt-2 text-sm font-medium text-stone-600" data-i18n="availability.placeholder">Choose your check-in and check-out directly in the calendar below.</p>
+            <p class="mt-1 text-sm text-stone-500" data-i18n="availability.contact-hint">Selected dates will be copied into the booking form automatically.</p>
+            
+            <div class="availability-panel mt-8 bg-white rounded-2xl ring-1 ring-stone-900/5 px-6 pt-5 pb-6 sm:px-8 sm:pt-6 sm:pb-7 shadow-sm">
+                <div id="calendar-widget" data-provider="booking" data-ical="" data-listing-id="" aria-label="Availability calendar"></div>
+                <div class="calendar-selection-summary" aria-live="polite">
+                    <div class="calendar-selection-pill"><strong>Check-in:</strong> <span id="calendar-checkin-value">-</span></div>
+                    <div class="calendar-selection-pill"><strong>Check-out:</strong> <span id="calendar-checkout-value">-</span></div>
+                    <div class="calendar-selection-pill"><strong>Nights:</strong> <span id="calendar-nights-value">0</span></div>
+                    <button id="calendar-to-reserve" type="button" class="calendar-to-reserve-btn" disabled>Use dates in Reserve Your Stay</button>
+                </div>
+            </div>
+        </div>
+    </section>
+

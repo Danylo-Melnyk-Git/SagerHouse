@@ -1,0 +1,342 @@
+/* Theme styles (extracted from styles.css) */
+
+/* Availability section uses dedicated theme tokens for stable light/dark rendering */
+.availability-section {
+    --availability-bg: rgba(245, 245, 244, 0.92);
+    --availability-heading: rgb(28, 25, 23);
+    --availability-text: rgb(87, 83, 78);
+    --availability-muted: rgb(120, 113, 108);
+    --availability-surface: rgba(255, 255, 255, 0.96);
+    --availability-border: rgba(214, 211, 209, 0.9);
+    background: var(--availability-bg) !important;
+}
+
+.availability-section h2 {
+    color: var(--availability-heading) !important;
+}
+
+.availability-section p {
+    color: var(--availability-text) !important;
+}
+
+.availability-section .availability-panel {
+    background: var(--availability-surface) !important;
+    border: 1px solid var(--availability-border);
+    box-shadow: 0 16px 36px rgba(28, 25, 23, 0.08);
+}
+
+/* Why section gets unified visual language with calendar cards */
+.why-section {
+    background: linear-gradient(180deg, rgba(250, 250, 249, 0.98) 0%, rgba(245, 245, 244, 0.96) 100%) !important;
+}
+
+.why-section h2 {
+    color: rgb(15, 23, 42) !important;
+}
+
+.why-section .why-grid-item {
+    border-left-color: rgb(196, 181, 166) !important;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 0.85rem;
+    padding: 1rem 1rem 1rem 1.1rem;
+}
+
+.why-section .why-grid-item iconify-icon {
+    color: rgb(87, 83, 78) !important;
+}
+
+.why-section .why-grid-item dt {
+    color: rgb(30, 41, 59) !important;
+}
+
+.why-section .why-grid-item dd {
+    color: rgb(87, 83, 78) !important;
+}
+
+html.dark-theme {
+    color-scheme: dark;
+}
+
+html.dark-theme body {
+    background-color: rgb(17, 24, 39);
+    color: rgb(245, 245, 244);
+}
+
+/* Global contrast layer for sections that still use light utility classes */
+html.dark-theme .bg-stone-50,
+html.dark-theme .bg-stone-100\/50,
+html.dark-theme .bg-stone-50\/80 {
+    background-color: rgb(17, 24, 39) !important;
+}
+
+html.dark-theme .bg-white,
+html.dark-theme section .rounded-2xl.bg-white,
+html.dark-theme section .open\:bg-stone-50[open] {
+    background-color: rgb(24, 24, 27) !important;
+}
+
+html.dark-theme .text-stone-900 {
+    color: rgb(245, 245, 244) !important;
+}
+
+html.dark-theme .text-stone-600,
+html.dark-theme .text-stone-500 {
+    color: rgb(214, 211, 209) !important;
+}
+
+html.dark-theme .text-stone-400 {
+    color: rgb(168, 162, 158) !important;
+}
+
+html.dark-theme .border-stone-200,
+html.dark-theme .border-stone-200\/60,
+html.dark-theme .ring-stone-200 {
+    border-color: rgba(87, 83, 78, 0.65) !important;
+}
+
+html.dark-theme .ring-1 {
+    --tw-ring-color: rgba(120, 113, 108, 0.45) !important;
+}
+
+html.dark-theme .hover\:bg-stone-100:hover {
+    background-color: rgb(39, 39, 42) !important;
+}
+
+html.dark-theme .hover\:text-stone-900:hover {
+    color: rgb(250, 250, 249) !important;
+}
+
+/* Keep booking form fields readable and consistent in dark mode */
+html.dark-theme #booking-form input,
+html.dark-theme #booking-form textarea,
+html.dark-theme #booking-form select {
+    background-color: rgb(39, 39, 42) !important;
+    color: rgb(245, 245, 244) !important;
+    border-color: rgba(87, 83, 78, 0.75) !important;
+}
+
+html.dark-theme #booking-form input::placeholder,
+html.dark-theme #booking-form textarea::placeholder {
+    color: rgb(161, 161, 170) !important;
+}
+
+html.dark-theme header {
+    background-color: rgba(17, 24, 39, 0.86);
+    border-color: rgba(87, 83, 78, 0.55);
+}
+
+html.dark-theme #mobile-menu {
+    background-color: rgb(24, 24, 27);
+    border-color: rgb(68, 64, 60);
+}
+
+html.dark-theme .hero-image-container::before {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+html.dark-theme article.bg-white,
+html.dark-theme .availability-panel,
+html.dark-theme .rounded-2xl.bg-white {
+    background-color: rgb(24, 24, 27) !important;
+    border-color: rgb(68, 64, 60) !important;
+}
+
+html.dark-theme header .text-stone-900,
+html.dark-theme .availability-section .text-stone-900 {
+    color: rgb(245, 245, 244);
+}
+
+html.dark-theme header .text-stone-600,
+html.dark-theme header .text-stone-500,
+html.dark-theme .availability-section .text-stone-600,
+html.dark-theme .availability-section .text-stone-500 {
+    color: rgb(214, 211, 209);
+}
+
+html.dark-theme header .hover\:bg-stone-100:hover {
+    background-color: rgb(39, 39, 42);
+}
+
+html.dark-theme header .hover\:bg-stone-800:hover,
+html.dark-theme .availability-section .hover\:bg-stone-800:hover {
+    background-color: rgb(231, 229, 228);
+}
+
+html.dark-theme header .hover\:text-stone-900:hover,
+html.dark-theme .availability-section .hover\:text-stone-900:hover {
+    color: rgb(250, 250, 249);
+}
+
+html.dark-theme .availability-section {
+    --availability-bg: rgb(17, 24, 39);
+    --availability-heading: rgb(245, 245, 244);
+    --availability-text: rgb(214, 211, 209);
+    --availability-muted: rgb(161, 161, 170);
+    --availability-surface: rgba(24, 24, 27, 0.98);
+    --availability-border: rgb(68, 64, 60);
+}
+
+html.dark-theme .why-section {
+    background: linear-gradient(180deg, rgba(17, 24, 39, 0.98) 0%, rgba(24, 24, 27, 0.96) 100%) !important;
+}
+
+html.dark-theme .why-section h2 {
+    color: rgb(245, 245, 244) !important;
+}
+
+html.dark-theme .why-section .why-grid-item {
+    background: rgba(39, 39, 42, 0.8);
+    border-left-color: rgb(120, 113, 108) !important;
+}
+
+html.dark-theme .why-section .why-grid-item iconify-icon {
+    color: rgb(214, 211, 209) !important;
+}
+
+html.dark-theme .why-section .why-grid-item dt {
+    color: rgb(245, 245, 244) !important;
+}
+
+html.dark-theme .why-section .why-grid-item dd {
+    color: rgb(214, 211, 209) !important;
+}
+
+html.dark-theme #calendar-widget {
+    background: transparent;
+    border-color: transparent;
+}
+
+html.dark-theme #calendar-widget .flatpickr-months {
+    background: rgb(245, 245, 244);
+}
+
+html.dark-theme #calendar-widget .flatpickr-calendar {
+    background: linear-gradient(180deg, rgba(39, 39, 42, 0.98) 0%, rgba(24, 24, 27, 0.98) 100%);
+    border-color: rgb(87, 83, 78);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.38);
+}
+
+html.dark-theme #calendar-widget .flatpickr-current-month,
+html.dark-theme #calendar-widget .flatpickr-monthDropdown-months,
+html.dark-theme #calendar-widget .numInput.cur-year,
+html.dark-theme #calendar-widget .flatpickr-prev-month,
+html.dark-theme #calendar-widget .flatpickr-next-month {
+    color: rgb(28, 25, 23);
+    fill: rgb(28, 25, 23);
+}
+
+html.dark-theme #calendar-widget .flatpickr-weekday,
+html.dark-theme #calendar-widget .flatpickr-day {
+    color: rgb(245, 245, 244);
+}
+
+html.dark-theme #calendar-widget .flatpickr-day.prevMonthDay,
+html.dark-theme #calendar-widget .flatpickr-day.nextMonthDay {
+    color: rgb(161, 161, 170);
+}
+
+html.dark-theme #calendar-widget .flatpickr-day:hover {
+    background: rgb(55, 55, 61);
+    border-color: rgb(96, 96, 106);
+}
+
+html.dark-theme #calendar-widget .flatpickr-day.today {
+    border-color: rgb(214, 211, 209);
+}
+
+html.dark-theme #calendar-widget .flatpickr-day.selected,
+html.dark-theme #calendar-widget .flatpickr-day.startRange,
+html.dark-theme #calendar-widget .flatpickr-day.endRange,
+html.dark-theme #calendar-widget .flatpickr-day.inRange {
+    background: rgb(245, 245, 244);
+    border-color: rgb(245, 245, 244);
+    color: rgb(24, 24, 27);
+}
+
+html.dark-theme #calendar-widget .flatpickr-day.inRange {
+    background: rgb(200, 196, 190);
+    border-color: rgb(200, 196, 190);
+    color: rgb(24, 24, 27);
+}
+
+html.dark-theme #calendar-widget .flatpickr-day.flatpickr-disabled,
+html.dark-theme #calendar-widget .flatpickr-day.flatpickr-disabled:hover {
+    color: rgb(120, 113, 108);
+}
+
+html.dark-theme .calendar-selection-pill {
+    border-color: rgb(87, 83, 78);
+    background: rgba(39, 39, 42, 0.92);
+    color: rgb(231, 229, 228);
+}
+
+html.dark-theme #calendar-widget .flatpickr-dayContainer + .flatpickr-dayContainer {
+    border-left-color: rgb(87, 83, 78);
+}
+
+html.dark-theme .calendar-to-reserve-btn {
+    border-color: rgb(245, 245, 244);
+    background: rgb(245, 245, 244);
+    color: rgb(24, 24, 27);
+}
+
+html.dark-theme .calendar-to-reserve-btn:hover:not(:disabled) {
+    background: rgb(214, 211, 209);
+}
+
+@media (max-width: 768px) {
+    #calendar-widget .flatpickr-calendar.inline,
+    #calendar-widget .flatpickr-calendar {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #calendar-widget .flatpickr-calendar {
+        padding: 0.7rem;
+    }
+
+    #calendar-widget .flatpickr-day {
+        height: 2.05rem;
+        line-height: 2.05rem;
+        font-size: 0.92rem;
+    }
+
+    #calendar-widget .flatpickr-dayContainer:not(:only-child) {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #calendar-widget .flatpickr-dayContainer + .flatpickr-dayContainer {
+        border-left: 0;
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .calendar-selection-summary {
+        justify-content: flex-start;
+    }
+
+    .calendar-selection-pill {
+        min-width: auto;
+    }
+}
+
+html.dark-theme .lang-select,
+html.dark-theme .theme-toggle {
+    background-color: rgba(39, 39, 42, 0.92);
+    border-color: rgb(87, 83, 78);
+    color: rgb(245, 245, 244);
+}
+
+html.dark-theme .lang-select:hover,
+html.dark-theme .theme-toggle:hover {
+    border-color: rgb(214, 211, 209);
+    color: rgb(250, 250, 249);
+}
+
+html.dark-theme .lang-select:focus,
+html.dark-theme .theme-toggle:focus {
+    border-color: rgb(245, 245, 244);
+    box-shadow: 0 0 0 3px rgba(245, 245, 244, 0.12);
+}
+

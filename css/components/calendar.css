@@ -1,0 +1,208 @@
+/* Calendar styles (extracted from styles.css) */
+
+/* Booking Calendar Widget */
+#calendar-widget {
+    min-height: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#calendar-widget .flatpickr-calendar.inline {
+    display: block;
+    position: static;
+    width: 94% !important;
+    max-width: 94% !important;
+    margin: 0 auto !important;
+    top: 0;
+}
+
+#calendar-widget .flatpickr-calendar {
+    width: 94% !important;
+    max-width: 94% !important;
+    margin: 0 auto !important;
+    border: 1px solid rgb(231, 229, 228);
+    border-radius: 1rem;
+    box-shadow: 0 14px 34px rgba(28, 25, 23, 0.08);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.99) 0%, rgba(249, 248, 246, 0.98) 100%);
+    padding: 1.39rem;
+    transform: translateY(0);
+}
+
+#calendar-widget .flatpickr-months {
+    background: rgb(28, 25, 23);
+    color: rgb(250, 250, 249);
+    border-radius: 0.72rem;
+    margin-bottom: 0.65rem;
+}
+
+#calendar-widget .flatpickr-months .flatpickr-month {
+    color: rgb(250, 250, 249);
+    height: 3.67rem;
+}
+
+#calendar-widget .flatpickr-current-month {
+    color: rgb(250, 250, 249);
+    font-size: 1.36rem;
+    font-weight: 700;
+}
+
+#calendar-widget .flatpickr-monthDropdown-months,
+#calendar-widget .numInput.cur-year,
+#calendar-widget .flatpickr-prev-month,
+#calendar-widget .flatpickr-next-month {
+    color: rgb(250, 250, 249);
+    fill: rgb(250, 250, 249);
+}
+
+#calendar-widget .flatpickr-weekdays {
+    margin-bottom: 0.2rem;
+}
+
+#calendar-widget .flatpickr-weekdaycontainer {
+    display: flex;
+    width: 100%;
+}
+
+#calendar-widget .flatpickr-weekday {
+    flex: 0 0 calc(100% / 7);
+    max-width: calc(100% / 7);
+    color: rgb(120, 113, 108);
+    font-size: 0.91rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+#calendar-widget .flatpickr-rContainer,
+#calendar-widget .flatpickr-days,
+#calendar-widget .dayContainer {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+#calendar-widget .flatpickr-days {
+    display: flex;
+}
+
+#calendar-widget .flatpickr-dayContainer {
+    min-width: 0 !important;
+}
+
+#calendar-widget .flatpickr-dayContainer:only-child {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+#calendar-widget .flatpickr-dayContainer:not(:only-child) {
+    width: 50% !important;
+    max-width: 50% !important;
+}
+
+#calendar-widget .flatpickr-dayContainer + .flatpickr-dayContainer {
+    border-left: 1px solid rgb(231, 229, 228);
+    padding-left: 0.75rem;
+    margin-left: 0.75rem;
+}
+
+#calendar-widget .flatpickr-day {
+    flex: 0 0 calc(100% / 7);
+    max-width: calc(100% / 7);
+    border-radius: 0.62rem;
+    border: 1px solid transparent;
+    color: rgb(41, 37, 36);
+    font-weight: 600;
+    height: 3.22rem;
+    line-height: 3.22rem;
+    font-size: 1.27rem;
+}
+
+#calendar-widget .flatpickr-day.today {
+    border-color: rgb(168, 162, 158);
+}
+
+#calendar-widget .flatpickr-day:hover {
+    background: rgb(247, 246, 244);
+    border-color: rgb(214, 211, 209);
+}
+
+#calendar-widget .flatpickr-day.prevMonthDay,
+#calendar-widget .flatpickr-day.nextMonthDay {
+    color: rgb(168, 162, 158);
+}
+
+#calendar-widget .flatpickr-day.selected,
+#calendar-widget .flatpickr-day.startRange,
+#calendar-widget .flatpickr-day.endRange,
+#calendar-widget .flatpickr-day.inRange {
+    background: rgb(41, 37, 36) !important;
+    border-color: rgb(41, 37, 36) !important;
+    color: rgb(250, 250, 249) !important;
+}
+
+#calendar-widget .flatpickr-day.inRange {
+    background: rgb(87, 83, 78) !important;
+    border-color: rgb(87, 83, 78) !important;
+}
+
+#calendar-widget .flatpickr-day.today.selected,
+#calendar-widget .flatpickr-day.today.startRange,
+#calendar-widget .flatpickr-day.today.endRange {
+    background: rgb(41, 37, 36) !important;
+    border-color: rgb(41, 37, 36) !important;
+    color: rgb(250, 250, 249) !important;
+}
+
+#calendar-widget .flatpickr-day.flatpickr-disabled,
+#calendar-widget .flatpickr-day.flatpickr-disabled:hover {
+    color: rgb(196, 181, 166);
+    background: transparent;
+    border-color: transparent;
+}
+
+.calendar-selection-summary {
+    margin-top: 0.7rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-selection-pill {
+    border: 1px solid rgb(231, 229, 228);
+    background: rgba(250, 250, 249, 0.98);
+    color: rgb(68, 64, 60);
+    border-radius: 9999px;
+    padding: 0.48rem 0.9rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    min-width: 11.75rem;
+    text-align: center;
+}
+
+.calendar-to-reserve-btn {
+    border: 1px solid rgb(87, 83, 78);
+    background: rgb(87, 83, 78);
+    color: rgb(250, 250, 249);
+    border-radius: 9999px;
+    padding: 0.5rem 1.05rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    box-shadow: 0 6px 16px rgba(28, 25, 23, 0.18);
+    transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.calendar-to-reserve-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    background: rgb(68, 64, 60);
+    border-color: rgb(68, 64, 60);
+}
+
+.calendar-to-reserve-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+

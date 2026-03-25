@@ -1,0 +1,56 @@
+<!-- 7. Prices Section -->
+    <section id="prices" class="border-t border-stone-200/60 py-24 sm:py-32">
+        <div class="mx-auto max-w-5xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl text-center">
+                <h2 class="text-3xl font-medium tracking-tight text-stone-900 sm:text-4xl" data-i18n="prices.title">Apartment Prices in Murau</h2>
+                <p class="mt-4 text-base text-stone-500" data-i18n="prices.subtitle">Transparent pricing for every season.</p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Winter -->
+                <div class="rounded-2xl ring-1 ring-stone-200 p-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-base font-medium text-stone-900 flex items-center gap-2"><iconify-icon icon="solar:snowflake-linear" class="text-lg text-blue-400"></iconify-icon> <span data-i18n="prices.winter">Winter Season</span></h3>
+                        <p class="mt-2 text-xs text-stone-500">Dec 15 – Mar 31</p>
+                        <p class="mt-6 flex items-baseline gap-x-1">
+                            <span class="text-3xl font-medium tracking-tight text-stone-900">€120</span>
+                            <span class="text-sm font-medium text-stone-500" data-i18n="prices.per-night">/night</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Summer -->
+                <div class="rounded-2xl ring-1 ring-stone-200 p-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-base font-medium text-stone-900 flex items-center gap-2"><iconify-icon icon="solar:sun-linear" class="text-lg text-amber-500"></iconify-icon> <span data-i18n="prices.summer">Summer Season</span></h3>
+                        <p class="mt-2 text-xs text-stone-500">Jun 15 – Sep 15</p>
+                        <p class="mt-6 flex items-baseline gap-x-1">
+                            <span class="text-3xl font-medium tracking-tight text-stone-900">€115</span>
+                            <span class="text-sm font-medium text-stone-500" data-i18n="prices.per-night">/night</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mid Season -->
+                <div class="rounded-2xl ring-1 ring-stone-200 p-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-base font-medium text-stone-900 flex items-center gap-2"><iconify-icon icon="solar:leaf-linear" class="text-lg text-emerald-500"></iconify-icon> <span data-i18n="prices.mid">Mid Season</span></h3>
+                        <p class="mt-2 text-xs text-stone-500">Apr 1 – Jun 14 &amp; Sep 16 – Dec 14</p>
+                        <p class="mt-6 flex items-baseline gap-x-1">
+                            <span class="text-3xl font-medium tracking-tight text-stone-900">€100</span>
+                            <span class="text-sm font-medium text-stone-500" data-i18n="prices.per-night">/night</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-xs text-stone-500 flex flex-col sm:flex-row sm:justify-center gap-4 sm:gap-8">
+                <span class="flex items-center gap-1"><iconify-icon icon="solar:info-circle-linear"></iconify-icon> Minimum stay: 1 night</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="solar:info-circle-linear"></iconify-icon> Cleaning fee included in price</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="solar:info-circle-linear"></iconify-icon> Local tourist tax not included</span>
+            </div>
+
+            <div id="pricing-dynamic" data-pricing-source=""></div>
+        </div>
+    </section>
+
