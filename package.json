@@ -1,0 +1,11 @@
+{
+  "name": "sager-house",
+  "version": "1.0.0",
+  "description": "Sager House - Holiday apartment website",
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/tailwind.input.css -o ./css/tailwind.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

@@ -11,6 +11,11 @@
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="author" content="Sager House">
     <meta name="theme-color" content="#111827">
+    <link rel="shortcut icon" href="images/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png?v=2">
+    <link rel="manifest" href="site.webmanifest">
         <link rel="canonical" id="seo-canonical" href="https://sagerhouse.com/">
         <link rel="alternate" hreflang="x-default" href="https://sagerhouse.com/">
         <link rel="alternate" hreflang="en" href="https://sagerhouse.com/">
@@ -34,20 +39,24 @@
         <meta property="og:locale:alternate" content="sk_SK">
         <meta property="og:locale:alternate" content="cs_CZ">
         <meta property="og:locale:alternate" content="hu_HU">
-    <meta property="og:image" content="https://sagerhouse.com/images/798174616.jpg">
+    <meta property="og:image" id="seo-og-image" content="https://sagerhouse.com/images/og-share.jpg">
+    <meta property="og:image:secure_url" id="seo-og-image-secure" content="https://sagerhouse.com/images/og-share.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="900">
         <meta property="og:image:alt" id="seo-og-image-alt" content="Sager House holiday apartment in Murau, Austria">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SagerHouse">
         <meta name="twitter:title" id="seo-twitter-title" content="Sager House Murau | Holiday Apartment in Austria | Sager Haus">
         <meta name="twitter:description" id="seo-twitter-description" content="Book your alpine stay in Murau, Austria with modern comfort, ski access, hiking, and mountain views.">
-    <meta name="twitter:image" content="https://sagerhouse.com/images/798174616.jpg">
+    <meta name="twitter:image" id="seo-twitter-image" content="https://sagerhouse.com/images/og-share.jpg">
         <meta name="twitter:image:alt" id="seo-twitter-image-alt" content="Sager House holiday apartment in Murau, Austria">
 
-    <!-- JSON-LD Structured Data -->
-        <script type="application/ld+json" id="seo-structured-data"></script>
+    <!-- JSON-LD Structured Data (static fallback; JS overwrites with localised version) -->
+        <script type="application/ld+json" id="seo-structured-data">{"@context":"https://schema.org","@graph":[{"@type":["LodgingBusiness","ApartmentComplex"],"@id":"https://sagerhouse.com/#lodging","name":"Sager House","alternateName":["Sager Haus","SAGER-HAUS"],"url":"https://sagerhouse.com/","description":"Book Sager House in Murau, Austria. Holiday apartment in Styria with mountain views, ski access, hiking, free parking, and modern comfort.","image":["https://sagerhouse.com/images/798174616.avif","https://sagerhouse.com/images/798174623.avif","https://sagerhouse.com/images/mauntin.avif"],"telephone":"+380 50 652 62 08","email":"sager.apart.house@gmail.com","priceRange":"€€","checkinTime":"15:00","checkoutTime":"10:00","address":{"@type":"PostalAddress","streetAddress":"Sankt-Leonhard-Platz 2/1","addressLocality":"Murau","addressRegion":"Styria","postalCode":"8850","addressCountry":"AT"},"geo":{"@type":"GeoCoordinates","latitude":47.1101,"longitude":14.1706},"hasMap":"https://www.google.com/maps/place/Sankt-Leonhard-Platz+2%2F1,+8850+Murau,+Austria"},{"@type":"WebSite","@id":"https://sagerhouse.com/#website","url":"https://sagerhouse.com/","name":"Sager House","alternateName":["Sager Haus","SAGER-HAUS"]}]}</script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
         <script defer src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"></noscript>
@@ -55,8 +64,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-        <link rel="preload" as="image" href="images/mauntin.jpg" imagesrcset="images/mauntin.jpg">
+        <link rel="preload" as="image" href="images/mauntin.avif">
     
+    <!-- Tailwind CSS (built from config) -->
+    <link rel="stylesheet" href="css/tailwind.css">
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/styles.css">
     <script>
@@ -94,7 +105,78 @@
 <body class="bg-stone-50 text-stone-900 antialiased selection:bg-stone-200 selection:text-stone-900">
 
     <!-- 1. Header -->
-    <div data-partial="partials/header.html"></div>
+    <header class="sticky top-0 z-50 border-b border-stone-200/60 bg-stone-50/80 backdrop-blur-md">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+            <a href="#" class="text-base font-medium tracking-tighter text-stone-900">SAGERHOUSE</a>
+
+            <button id="mobile-menu-button" type="button" class="md:hidden -mr-2 inline-flex items-center justify-center rounded-md p-2 text-stone-600 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-stone-900" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <iconify-icon id="mobile-menu-icon" icon="solar:menu-list-linear" class="text-2xl"></iconify-icon>
+            </button>
+
+            <nav class="hidden md:flex items-center gap-x-8 text-sm font-normal">
+                <a href="#apartments" class="text-stone-700 hover:text-stone-900 transition-colors" data-i18n="header.apartments">Apartments</a>
+                <a href="#prices" class="text-stone-700 hover:text-stone-900 transition-colors" data-i18n="header.prices">Prices</a>
+                <a href="#availability" class="text-stone-700 hover:text-stone-900 transition-colors" data-i18n="header.availability">Availability</a>
+                <a href="#gallery" class="text-stone-700 hover:text-stone-900 transition-colors" data-i18n="header.gallery">Gallery</a>
+                <a href="#location" class="text-stone-700 hover:text-stone-900 transition-colors" data-i18n="header.location">Location</a>
+                <a href="#faq" class="text-stone-700 hover:text-stone-900 transition-colors" data-i18n="header.faq">FAQ</a>
+                <a href="#contact" class="text-stone-700 hover:text-stone-900 transition-colors" data-i18n="header.contact">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-x-6">
+                <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle dark theme" title="Toggle dark theme">
+                    <iconify-icon data-theme-icon icon="solar:moon-linear"></iconify-icon>
+                </button>
+                <div class="hidden sm:block">
+                    <label for="desktop-language-select" class="sr-only">Choose language</label>
+                    <select id="desktop-language-select" class="lang-select" data-lang-select aria-label="Choose language">
+                        <option value="en">EN</option>
+                        <option value="de">DE</option>
+                        <option value="uk">UK</option>
+                        <option value="ru">RU</option>
+                        <option value="sk">SK</option>
+                        <option value="cs">CS</option>
+                        <option value="hu">HU</option>
+                    </select>
+                </div>
+                <a href="#contact" class="rounded-md bg-stone-900 px-4 py-2 text-sm font-medium text-stone-50 shadow-sm hover:bg-stone-800 transition-colors" data-i18n="header.book-now">Book Now</a>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden border-t border-stone-200 bg-white">
+            <div class="px-6 py-5">
+                <nav class="flex flex-col gap-2 text-sm font-medium text-stone-700">
+                    <a href="#apartments" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.apartments">Apartments</a>
+                    <a href="#prices" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.prices">Prices</a>
+                    <a href="#availability" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.availability">Availability</a>
+                    <a href="#gallery" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.gallery">Gallery</a>
+                    <a href="#location" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.location">Location</a>
+                    <a href="#faq" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.faq">FAQ</a>
+                    <a href="#contact" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.contact">Contact</a>
+                </nav>
+
+                <div class="mt-5 flex flex-col gap-3 border-t border-stone-200 pt-5">
+                    <button type="button" class="theme-toggle theme-toggle-mobile" data-theme-toggle aria-label="Toggle dark theme" title="Toggle dark theme">
+                        <iconify-icon data-theme-icon icon="solar:moon-linear"></iconify-icon>
+                    </button>
+                    <div>
+                        <label for="mobile-language-select" class="sr-only">Choose language</label>
+                        <select id="mobile-language-select" class="lang-select lang-select-mobile" data-lang-select aria-label="Choose language">
+                            <option value="en">EN</option>
+                            <option value="de">DE</option>
+                            <option value="uk">UK</option>
+                            <option value="ru">RU</option>
+                            <option value="sk">SK</option>
+                            <option value="cs">CS</option>
+                            <option value="hu">HU</option>
+                        </select>
+                    </div>
+                    <a href="#contact" class="block rounded-md bg-stone-900 px-4 py-2 text-center text-sm font-medium text-stone-50 hover:bg-stone-800 transition-colors" data-i18n="header.book-now">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <!-- 2. Hero Section -->
     <section class="relative isolate overflow-hidden pt-14 pb-24 sm:pt-24 sm:pb-32 lg:pb-40">
@@ -121,7 +203,11 @@
         
         <div class="mx-auto mt-16 max-w-7xl px-6 lg:px-8">
             <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl bg-stone-100 shadow-sm ring-1 ring-stone-900/5 hero-image-container">
-                <img src="images/mauntin.jpg" alt="Austrian Alps mountain view near Murau" width="1600" height="900" fetchpriority="high" decoding="async" class="h-full w-full object-cover object-center">
+                <picture>
+                  <source srcset="images/mauntin.avif" type="image/avif">
+                  <source srcset="images/mauntin.webp" type="image/webp">
+                  <img src="images/mauntin.jpg" alt="Austrian Alps mountain view near Murau" width="1600" height="900" fetchpriority="high" decoding="async" class="h-full w-full object-cover object-center">
+                </picture>
             </div>
         </div>
     </section>
@@ -149,9 +235,13 @@
             <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                 
                 <!-- Active Apartment: The Sager Apartment -->
-                <article class="flex flex-col items-start bg-white rounded-2xl ring-1 ring-stone-900/5 shadow-sm overflow-hidden transition-shadow hover:shadow-md">
+                <article class="apartment-card bg-white rounded-2xl ring-1 ring-stone-900/5 shadow-sm overflow-hidden transition-shadow hover:shadow-md">
                     <div class="w-full aspect-[4/3] overflow-hidden">
-                        <img src="images/798174623.jpg" alt="The Sager Apartment" width="1200" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <picture>
+                          <source srcset="images/798174623.avif" type="image/avif">
+                          <source srcset="images/798174623.webp" type="image/webp">
+                          <img src="images/798174623.jpg" alt="The Sager Apartment" width="1200" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        </picture>
                     </div>
                     <div class="p-8 flex flex-col flex-1 w-full">
                         <h3 class="text-xl font-medium tracking-tight text-stone-900" data-i18n="apartment.apt1-title">The Sager Apartment</h3>
@@ -172,14 +262,18 @@
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.massage-chair">Massage Armchair</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.heating">Central Heating</span></li>
                         </ul>
-                        <a href="#contact" class="mt-8 block w-full text-center rounded-md bg-stone-900 px-4 py-2.5 text-sm font-medium text-stone-50 hover:bg-stone-800 transition-colors" data-i18n="apartment.request">Request Booking</a>
+                        <a href="#contact" class="apartment-cta rounded-md bg-stone-900 px-6 py-2.5 text-sm font-medium text-center text-stone-50 hover:bg-stone-800 transition-colors" data-i18n="apartment.request">Request Booking</a>
                     </div>
                 </article>
 
                 <!-- Coming Soon: Apartment 2 -->
-                <article class="flex flex-col items-start bg-white rounded-2xl ring-1 ring-stone-900/5 shadow-sm overflow-hidden transition-shadow hover:shadow-md">
+                <article class="apartment-card bg-white rounded-2xl ring-1 ring-stone-900/5 shadow-sm overflow-hidden transition-shadow hover:shadow-md">
                     <div class="w-full aspect-[4/3] overflow-hidden relative">
-                        <img src="images/798174638.jpg" alt="Coming Soon Apartment" width="1200" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover blur-sm">
+                        <picture>
+                          <source srcset="images/798174638.avif" type="image/avif">
+                          <source srcset="images/798174638.webp" type="image/webp">
+                          <img src="images/798174638.jpg" alt="Coming Soon Apartment" width="1200" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover blur-sm">
+                        </picture>
                         <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
                             <div class="text-center">
                                 <iconify-icon icon="solar:hourglass-linear" class="text-5xl text-white block mb-2"></iconify-icon>
@@ -205,14 +299,18 @@
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.balcony">Balcony with Views</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.heating">Central Heating</span></li>
                         </ul>
-                        <button disabled class="mt-8 block w-full text-center rounded-md bg-stone-300 px-4 py-2.5 text-sm font-medium text-stone-500 cursor-not-allowed" data-i18n="apartment.request">Coming Soon</button>
+                        <button disabled class="apartment-cta apartment-cta-disabled rounded-md bg-stone-300 px-4 py-2.5 text-center text-sm font-medium text-stone-500 cursor-not-allowed" data-i18n="apartment.request">Coming Soon</button>
                     </div>
                 </article>
 
                 <!-- Coming Soon: Apartment 3 -->
-                <article class="flex flex-col items-start bg-white rounded-2xl ring-1 ring-stone-900/5 shadow-sm overflow-hidden transition-shadow hover:shadow-md">
+                <article class="apartment-card bg-white rounded-2xl ring-1 ring-stone-900/5 shadow-sm overflow-hidden transition-shadow hover:shadow-md">
                     <div class="w-full aspect-[4/3] overflow-hidden relative">
-                        <img src="images/798174645.jpg" alt="Coming Soon Apartment" width="1200" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover blur-sm">
+                        <picture>
+                          <source srcset="images/798174645.avif" type="image/avif">
+                          <source srcset="images/798174645.webp" type="image/webp">
+                          <img src="images/798174645.jpg" alt="Coming Soon Apartment" width="1200" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover blur-sm">
+                        </picture>
                         <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
                             <div class="text-center">
                                 <iconify-icon icon="solar:hourglass-linear" class="text-5xl text-white block mb-2"></iconify-icon>
@@ -238,14 +336,18 @@
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.fireplace">Fireplace</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span data-i18n="feature.heating">Central Heating</span></li>
                         </ul>
-                        <button disabled class="mt-8 block w-full text-center rounded-md bg-stone-300 px-4 py-2.5 text-sm font-medium text-stone-500 cursor-not-allowed" data-i18n="apartment.request">Coming Soon</button>
+                        <button disabled class="apartment-cta apartment-cta-disabled rounded-md bg-stone-300 px-4 py-2.5 text-center text-sm font-medium text-stone-500 cursor-not-allowed" data-i18n="apartment.request">Coming Soon</button>
                     </div>
                 </article>
 
                 <!-- Coming Soon: Apartment 4 -->
-                <article class="flex flex-col items-start bg-white rounded-2xl ring-1 ring-stone-900/5 shadow-sm overflow-hidden transition-shadow hover:shadow-md">
+                <article class="apartment-card bg-white rounded-2xl ring-1 ring-stone-900/5 shadow-sm overflow-hidden transition-shadow hover:shadow-md">
                     <div class="w-full aspect-[4/3] overflow-hidden relative">
-                        <img src="images/798174616.jpg" alt="Coming Soon Apartment" width="1200" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover blur-sm">
+                        <picture>
+                          <source srcset="images/798174616.avif" type="image/avif">
+                          <source srcset="images/798174616.webp" type="image/webp">
+                          <img src="images/798174616.jpg" alt="Coming Soon Apartment" width="1200" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover blur-sm">
+                        </picture>
                         <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
                             <div class="text-center">
                                 <iconify-icon icon="solar:hourglass-linear" class="text-5xl text-white block mb-2"></iconify-icon>
@@ -254,12 +356,12 @@
                         </div>
                     </div>
                     <div class="p-8 flex flex-col flex-1 w-full">
-                        <h3 class="text-xl font-medium tracking-tight text-stone-900">Apartment 4</h3>
+                        <h3 class="text-xl font-medium tracking-tight text-stone-900" data-i18n="apartment.apt4-title">Apartment 4</h3>
                         <div class="mt-4 flex flex-wrap gap-4 text-xs text-stone-500">
-                            <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span>72 m²</span></span>
-                            <span class="flex items-center gap-1"><iconify-icon icon="solar:users-group-rounded-linear" class="text-base"></iconify-icon> <span>Sleeps 5 people</span></span>
+                            <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span data-i18n="apartment.apt4-size">72 m²</span></span>
+                            <span class="flex items-center gap-1"><iconify-icon icon="solar:users-group-rounded-linear" class="text-base"></iconify-icon> <span data-i18n="apartment.apt4-sleeps">Sleeps 5 people</span></span>
                         </div>
-                        <h4 class="mt-6 text-sm font-medium text-stone-900">Amenities</h4>
+                        <h4 class="mt-6 text-sm font-medium text-stone-900" data-i18n="apartment.features-title">Amenities</h4>
                         <ul class="mt-4 space-y-2 text-sm text-stone-600 flex-1">
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>2 Bedrooms</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Sofa Bed (2 additional guests)</span></li>
@@ -271,14 +373,18 @@
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Balcony with Views</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Central Heating</span></li>
                         </ul>
-                        <button disabled class="mt-8 block w-full text-center rounded-md bg-stone-300 px-4 py-2.5 text-sm font-medium text-stone-500 cursor-not-allowed">Coming Soon</button>
+                        <button disabled class="apartment-cta apartment-cta-disabled rounded-md bg-stone-300 px-4 py-2.5 text-center text-sm font-medium text-stone-500 cursor-not-allowed" data-i18n="apartment.coming-soon">Coming Soon</button>
                     </div>
                 </article>
 
                 <!-- Coming Soon: Apartment 5 -->
-                <article class="flex flex-col items-start bg-white rounded-2xl ring-1 ring-stone-900/5 shadow-sm overflow-hidden transition-shadow hover:shadow-md">
+                <article class="apartment-card bg-white rounded-2xl ring-1 ring-stone-900/5 shadow-sm overflow-hidden transition-shadow hover:shadow-md">
                     <div class="w-full aspect-[4/3] overflow-hidden relative">
-                        <img src="images/798174641.jpg" alt="Coming Soon Apartment" width="1200" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover blur-sm">
+                        <picture>
+                          <source srcset="images/798174641.avif" type="image/avif">
+                          <source srcset="images/798174641.webp" type="image/webp">
+                          <img src="images/798174641.jpg" alt="Coming Soon Apartment" width="1200" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover blur-sm">
+                        </picture>
                         <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
                             <div class="text-center">
                                 <iconify-icon icon="solar:hourglass-linear" class="text-5xl text-white block mb-2"></iconify-icon>
@@ -287,12 +393,12 @@
                         </div>
                     </div>
                     <div class="p-8 flex flex-col flex-1 w-full">
-                        <h3 class="text-xl font-medium tracking-tight text-stone-900">Apartment 5</h3>
+                        <h3 class="text-xl font-medium tracking-tight text-stone-900" data-i18n="apartment.apt5-title">Apartment 5</h3>
                         <div class="mt-4 flex flex-wrap gap-4 text-xs text-stone-500">
-                            <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span>80 m²</span></span>
-                            <span class="flex items-center gap-1"><iconify-icon icon="solar:users-group-rounded-linear" class="text-base"></iconify-icon> <span>Sleeps 6 people</span></span>
+                            <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span data-i18n="apartment.apt5-size">80 m²</span></span>
+                            <span class="flex items-center gap-1"><iconify-icon icon="solar:users-group-rounded-linear" class="text-base"></iconify-icon> <span data-i18n="apartment.apt5-sleeps">Sleeps 6 people</span></span>
                         </div>
-                        <h4 class="mt-6 text-sm font-medium text-stone-900">Amenities</h4>
+                        <h4 class="mt-6 text-sm font-medium text-stone-900" data-i18n="apartment.features-title">Amenities</h4>
                         <ul class="mt-4 space-y-2 text-sm text-stone-600 flex-1">
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>2 Bedrooms</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Sofa Bed (2 additional guests)</span></li>
@@ -304,19 +410,82 @@
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Fireplace</span></li>
                             <li class="flex items-center gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-stone-400"></iconify-icon> <span>Central Heating</span></li>
                         </ul>
-                        <button disabled class="mt-8 block w-full text-center rounded-md bg-stone-300 px-4 py-2.5 text-sm font-medium text-stone-500 cursor-not-allowed">Coming Soon</button>
-                    </div>
-                </article>
-
-            </div>
+                        <button disabled class="apartment-cta apartment-cta-disabled rounded-md bg-stone-300 px-4 py-2.5 text-center text-sm font-medium text-stone-500 cursor-not-allowed" data-i18n="apartment.coming-soon">Coming Soon</button>
         </div>
     </section>
 
     <!-- 6. Availability Section -->
-    <div data-partial="partials/availability.html"></div>
+    <section id="availability" class="availability-section border-t border-stone-200/60 bg-stone-100/50 py-24 sm:py-32">
+        <div class="mx-auto max-w-4xl px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-medium tracking-tight text-stone-900 sm:text-4xl" data-i18n="availability.title">Check Availability</h2>
+            <p class="mt-4 text-base font-medium text-stone-600" data-i18n="availability.subtitle">Find your perfect dates for a relaxing getaway.</p>
+            <p class="mt-2 text-sm font-medium text-stone-600" data-i18n="availability.placeholder">Choose your check-in and check-out directly in the calendar below.</p>
+            <p class="mt-1 text-sm text-stone-500" data-i18n="availability.contact-hint">Selected dates will be copied into the booking form automatically.</p>
+
+            <div class="availability-panel mt-8 bg-white rounded-2xl ring-1 ring-stone-900/5 px-6 pt-5 pb-6 sm:px-8 sm:pt-6 sm:pb-7 shadow-sm">
+                <div id="calendar-widget" data-provider="booking" data-ical="" data-listing-id="" aria-label="Availability calendar"></div>
+                <div class="calendar-selection-summary" aria-live="polite">
+                    <div class="calendar-selection-pill"><strong>Check-in:</strong> <span id="calendar-checkin-value">-</span></div>
+                    <div class="calendar-selection-pill"><strong>Check-out:</strong> <span id="calendar-checkout-value">-</span></div>
+                    <div class="calendar-selection-pill"><strong>Nights:</strong> <span id="calendar-nights-value">0</span></div>
+                    <button id="calendar-to-reserve" type="button" class="calendar-to-reserve-btn" disabled>Use dates in Reserve Your Stay</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- 7. Prices Section -->
-    <div data-partial="partials/prices.html"></div>
+    <section id="prices" class="border-t border-stone-200/60 py-24 sm:py-32">
+        <div class="mx-auto max-w-5xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl text-center">
+                <h2 class="text-3xl font-medium tracking-tight text-stone-900 sm:text-4xl" data-i18n="prices.title">Apartment Prices in Murau</h2>
+                <p class="mt-4 text-base text-stone-500" data-i18n="prices.subtitle">Transparent pricing for every season.</p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
+                <div class="rounded-2xl ring-1 ring-stone-200 p-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-base font-medium text-stone-900 flex items-center gap-2"><iconify-icon icon="solar:snowflake-linear" class="text-lg text-blue-400"></iconify-icon> <span data-i18n="prices.winter">Winter Season</span></h3>
+                        <p class="mt-2 text-xs text-stone-500">Dec 15 - Mar 31</p>
+                        <p class="mt-6 flex items-baseline gap-x-1">
+                            <span class="text-3xl font-medium tracking-tight text-stone-900">EUR120</span>
+                            <span class="text-sm font-medium text-stone-500" data-i18n="prices.per-night">/night</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl ring-1 ring-stone-200 p-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-base font-medium text-stone-900 flex items-center gap-2"><iconify-icon icon="solar:sun-linear" class="text-lg text-amber-500"></iconify-icon> <span data-i18n="prices.summer">Summer Season</span></h3>
+                        <p class="mt-2 text-xs text-stone-500">Jun 15 - Sep 15</p>
+                        <p class="mt-6 flex items-baseline gap-x-1">
+                            <span class="text-3xl font-medium tracking-tight text-stone-900">EUR115</span>
+                            <span class="text-sm font-medium text-stone-500" data-i18n="prices.per-night">/night</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl ring-1 ring-stone-200 p-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-base font-medium text-stone-900 flex items-center gap-2"><iconify-icon icon="solar:leaf-linear" class="text-lg text-emerald-500"></iconify-icon> <span data-i18n="prices.mid">Mid Season</span></h3>
+                        <p class="mt-2 text-xs text-stone-500">Apr 1 - Jun 14 and Sep 16 - Dec 14</p>
+                        <p class="mt-6 flex items-baseline gap-x-1">
+                            <span class="text-3xl font-medium tracking-tight text-stone-900">EUR100</span>
+                            <span class="text-sm font-medium text-stone-500" data-i18n="prices.per-night">/night</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 flex flex-col gap-4 text-xs text-stone-500 sm:flex-row sm:justify-center sm:gap-8">
+                <span class="flex items-center gap-1"><iconify-icon icon="solar:info-circle-linear"></iconify-icon> Minimum stay: 1 night</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="solar:info-circle-linear"></iconify-icon> Cleaning fee included in price</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="solar:info-circle-linear"></iconify-icon> Local tourist tax not included</span>
+            </div>
+
+            <div id="pricing-dynamic" data-pricing-source=""></div>
+        </div>
+    </section>
 
 <!-- 8. Why Stay at Sager House -->
     <section class="why-section border-t border-stone-200/60 bg-stone-900 py-24 sm:py-32">
@@ -381,27 +550,44 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
                 
                 <div class="col-span-2 row-span-2 overflow-hidden rounded-xl bg-stone-100 cursor-pointer transition-transform duration-500 hover:shadow-xl" data-gallery-item>
-                    <img src="images/798174616.jpg" alt="Sager House interior" width="1200" height="900" loading="lazy" decoding="async" data-lightbox="gallery" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    <picture>
+                      <source srcset="images/798174616.avif" type="image/avif">
+                      <source srcset="images/798174616.webp" type="image/webp">
+                      <img src="images/798174616.jpg" alt="Sager House Murau – bright, modern living room with Alpine interior" width="1200" height="900" loading="lazy" decoding="async" data-lightbox="gallery" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </picture>
                 </div>
                 
                 <div class="overflow-hidden rounded-xl bg-stone-100 cursor-pointer transition-transform duration-500 hover:shadow-xl" data-gallery-item>
-                    <img src="images/798174623.jpg" alt="Bedroom view" width="1200" height="900" loading="lazy" decoding="async" data-lightbox="gallery" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    <picture>
+                      <source srcset="images/798174623.avif" type="image/avif">
+                      <source srcset="images/798174623.webp" type="image/webp">
+                      <img src="images/798174623.jpg" alt="Sager House bedroom with double bed and Alpine-style decor in Murau" width="1200" height="900" loading="lazy" decoding="async" data-lightbox="gallery" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </picture>
+                </div>
+                
+
+                <div class="overflow-hidden rounded-xl bg-stone-100 cursor-pointer transition-transform duration-500 hover:shadow-xl" data-gallery-item>
+                    <picture>
+                      <source srcset="images/798174638.avif" type="image/avif">
+                      <source srcset="images/798174638.webp" type="image/webp">
+                      <img src="images/798174638.jpg" alt="Fully equipped kitchen with dishwasher and coffee machine at Sager House" width="1200" height="900" loading="lazy" decoding="async" data-lightbox="gallery" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </picture>
                 </div>
                 
                 <div class="overflow-hidden rounded-xl bg-stone-100 cursor-pointer transition-transform duration-500 hover:shadow-xl" data-gallery-item>
-                    <img src="images/mauntin.jpg" alt="Murau alpine surroundings" width="1600" height="900" loading="lazy" decoding="async" data-lightbox="gallery" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                </div>
-                
-                <div class="overflow-hidden rounded-xl bg-stone-100 cursor-pointer transition-transform duration-500 hover:shadow-xl" data-gallery-item>
-                    <img src="images/798174638.jpg" alt="Kitchen area" width="1200" height="900" loading="lazy" decoding="async" data-lightbox="gallery" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                </div>
-                
-                <div class="overflow-hidden rounded-xl bg-stone-100 cursor-pointer transition-transform duration-500 hover:shadow-xl" data-gallery-item>
-                    <img src="images/798174641.jpg" alt="Living space" width="1200" height="900" loading="lazy" decoding="async" data-lightbox="gallery" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    <picture>
+                      <source srcset="images/798174641.avif" type="image/avif">
+                      <source srcset="images/798174641.webp" type="image/webp">
+                      <img src="images/798174641.jpg" alt="Cozy living area with sofa and mountain views at Sager House Murau" width="1200" height="900" loading="lazy" decoding="async" data-lightbox="gallery" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </picture>
                 </div>
 
                 <div class="col-span-2 overflow-hidden rounded-xl bg-stone-100 cursor-pointer transition-transform duration-500 hover:shadow-xl" data-gallery-item>
-                    <img src="images/798174645.jpg" alt="Modern apartment amenities" width="1200" height="900" loading="lazy" decoding="async" data-lightbox="gallery" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    <picture>
+                      <source srcset="images/798174645.avif" type="image/avif">
+                      <source srcset="images/798174645.webp" type="image/webp">
+                      <img src="images/798174645.jpg" alt="Modern holiday apartment amenities – central heating, WiFi, and separate entrance at Sager House" width="1200" height="900" loading="lazy" decoding="async" data-lightbox="gallery" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </picture>
                 </div>
 
             </div>
@@ -418,13 +604,31 @@
                     <p data-i18n="location.para2">For winter sports enthusiasts, the acclaimed Kreischberg ski resort is just a 5-minute drive away. The local train station is also easily accessible, providing effortless connections for your arrival. Step outside your door and find yourself immediately connected to extensive networks of nature paths, making it the perfect basecamp for all seasons.</p>
                 </div>
                 <div class="mt-8 flex items-center gap-x-4">
-                    <a href="#" class="text-sm font-medium text-stone-900 hover:text-stone-600 underline underline-offset-4 transition-colors" data-i18n="location.directions">Get Directions</a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Sankt-Leonhard-Platz+2%2F1%2C+8850+Murau%2C+Austria" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-stone-900 hover:text-stone-600 underline underline-offset-4 transition-colors" data-i18n="location.directions">Get Directions</a>
+                </div>
+                <div class="mt-10 grid grid-cols-1 gap-4 px-1 sm:grid-cols-2 sm:px-0">
+                    <div class="rounded-2xl bg-white p-5 ring-1 ring-stone-900/5">
+                        <div class="text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">Distance to Kreischberg</div>
+                        <p class="mt-2 text-sm text-stone-600">About 10 minutes by car to Kreischberg ski resort.</p>
+                    </div>
+                    <div class="rounded-2xl bg-white p-5 ring-1 ring-stone-900/5">
+                        <div class="text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">Distance to Old Town</div>
+                        <p class="mt-2 text-sm text-stone-600">A short walk brings you to Murau old town, cafes, and restaurants.</p>
+                    </div>
+                    <div class="rounded-2xl bg-white p-5 ring-1 ring-stone-900/5">
+                        <div class="text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">Parking</div>
+                        <p class="mt-2 text-sm text-stone-600">Free on-site parking is available directly for guests.</p>
+                    </div>
+                    <div class="rounded-2xl bg-white p-5 ring-1 ring-stone-900/5">
+                        <div class="text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">Ski Storage and Hiking Access</div>
+                        <p class="mt-2 text-sm text-stone-600">Dedicated ski storage plus direct access to hiking routes in the Murau area.</p>
+                    </div>
                 </div>
             </div>
             
             <!-- Map Container -->
             <div class="aspect-square lg:aspect-video w-full rounded-2xl bg-stone-100 overflow-hidden ring-1 ring-stone-900/5 flex items-center justify-center relative">
-                <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=14.1297%2C47.1011%2C14.2097%2C47.1211&layer=mapnik" style="border: 0; width: 100%; height: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=14.1297%2C47.1011%2C14.2097%2C47.1211&layer=mapnik" title="Map showing Sager House location in Murau, Austria" style="border: 0; width: 100%; height: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -459,7 +663,7 @@
                                 <iconify-icon icon="solar:phone-linear" class="text-2xl text-stone-400"></iconify-icon>
                             </dt>
                             <dd>
-                                <a class="hover:text-stone-900 transition-colors" href="whatsapp://send?phone=+380506526208">+380 50 652 62 08</a>
+                                <a class="text-stone-600 hover:text-stone-900 transition-colors" href="whatsapp://send?phone=+380506526208">+380 50 652 62 08</a>
                                 <div class="text-xs text-stone-400 mt-1">WhatsApp</div>
                             </dd>
                         </div>
@@ -469,7 +673,7 @@
                                 <iconify-icon icon="solar:letter-linear" class="text-2xl text-stone-400"></iconify-icon>
                             </dt>
                             <dd>
-                                <a class="hover:text-stone-900 transition-colors" href="mailto:sager.apart.house@gmail.com" data-i18n="footer.email">sager.apart.house@gmail.com</a>
+                                <a class="text-stone-600 hover:text-stone-900 transition-colors" href="mailto:sager.apart.house@gmail.com" data-i18n="footer.email">sager.apart.house@gmail.com</a>
                             </dd>
                         </div>
                     </dl>
@@ -543,10 +747,130 @@
     </section>
 
     <!-- 12. FAQ Section -->
-    <div data-partial="partials/faq.html"></div>
+    <section id="faq" class="border-t border-stone-200/60 py-24 sm:py-32">
+        <div class="mx-auto max-w-3xl px-6 lg:px-8">
+            <h2 class="text-3xl font-medium tracking-tight text-center text-stone-900 sm:text-4xl" data-i18n="faq.title">Frequently Asked Questions</h2>
+
+            <div class="mt-16 space-y-4">
+                <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
+                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                        <span data-i18n="faq.q1">What are the check-in and check-out times?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                    </summary>
+                    <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a1">Check-in is available from 15:00 (3 PM) onwards. We kindly ask that you check out by 10:00 AM on your day of departure.</p>
+                </details>
+                <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
+                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                        <span data-i18n="faq.q2">What is your cancellation policy?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                    </summary>
+                    <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a2">Cancellations made up to 14 days before arrival are free of charge. Later cancellations or no-shows may incur a fee of up to 100% of the booking amount.</p>
+                </details>
+                <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
+                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                        <span data-i18n="faq.q3">Is parking available on site?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                    </summary>
+                    <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a3">Yes, we provide free private parking for all our guests right at the property.</p>
+                </details>
+                <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
+                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                        <span data-i18n="faq.q4">Are pets allowed?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                    </summary>
+                    <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a4">While we love animals, to maintain our hypoallergenic standards for all guests, we do not allow pets in the apartments.</p>
+                </details>
+                <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
+                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                        <span data-i18n="faq.q5">Do you have a ski storage room?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                    </summary>
+                    <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a5">Yes, we offer a dedicated, heated ski storage room equipped with boot dryers for your convenience.</p>
+                </details>
+                <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
+                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                        <span data-i18n="faq.q6">What payment methods do you accept?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                    </summary>
+                    <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a6">We accept major credit cards (Visa, Mastercard), bank transfers prior to arrival, and cash payments.</p>
+                </details>
+                <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
+                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                        <span data-i18n="faq.q7">Is the local tourist tax included?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                    </summary>
+                    <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a7">The local tourist tax is not included in the nightly rate and will be charged separately upon arrival.</p>
+                </details>
+                <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
+                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                        <span data-i18n="faq.q8">Is there a minimum stay requirement?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                    </summary>
+                    <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a8">We generally require a minimum stay of 3 nights, though this may vary during peak holiday seasons.</p>
+                </details>
+                <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
+                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                        <span data-i18n="faq.q9">How many guests can stay?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                    </summary>
+                    <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a9">The apartment is designed for up to 4 guests: a double bed in the bedroom and a sofa bed in the living room.</p>
+                </details>
+                <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
+                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                        <span data-i18n="faq.q10">What are the nearby activities?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                    </summary>
+                    <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a10">Skiing, hiking, mountain biking, wildlife observation, and cultural attractions. The apartment is perfectly positioned for winter sports and summer outdoor adventures.</p>
+                </details>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <div data-partial="partials/footer.html"></div>
+    <footer class="bg-white border-t border-stone-200">
+        <div class="mx-auto max-w-7xl px-6 py-8 lg:px-8">
+            <div class="grid grid-cols-1 gap-6 mb-6 md:grid-cols-3">
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-sm font-medium text-stone-900">Follow Us</h3>
+                    <div class="flex gap-4 text-stone-400">
+                        <a href="https://www.instagram.com/sagerhouse/" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-stone-900 transition-colors" title="Visit our Instagram">
+                            <span class="sr-only">Instagram</span>
+                            <iconify-icon icon="solar:camera-minimalistic-linear" class="text-xl"></iconify-icon>
+                        </a>
+                        <a href="https://www.facebook.com/sagerhouse" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-stone-900 transition-colors" title="Visit our Facebook">
+                            <span class="sr-only">Facebook</span>
+                            <iconify-icon icon="solar:link-linear" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-sm font-medium text-stone-900">Location</h3>
+                    <a href="https://maps.google.com/?q=Sankt-Leonhard-Platz+2/1,+Murau,+Austria" target="_blank" rel="noopener noreferrer" class="text-xs text-stone-500 hover:text-stone-900 transition-colors flex items-center gap-2">
+                        <iconify-icon icon="solar:map-point-linear" class="text-base"></iconify-icon>
+                        <span>Murau, Austria</span>
+                    </a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-sm font-medium text-stone-900">Contact</h3>
+                    <a href="mailto:sager.apart.house@gmail.com" class="text-xs text-stone-500 hover:text-stone-900 transition-colors">sager.apart.house@gmail.com</a>
+                </div>
+            </div>
+            <div class="border-t border-stone-200 py-5">
+                <div class="flex flex-col items-center justify-between gap-3 md:flex-row">
+                    <span class="text-base font-medium tracking-tighter text-stone-900">SAGERHOUSE</span>
+                    <nav class="flex flex-col items-center gap-3 text-xs sm:flex-row sm:gap-5 text-stone-500">
+                        <a href="terms.html" class="text-stone-500 hover:text-stone-900 transition-colors">Terms &amp; Conditions</a>
+                        <a href="privacy.html" class="text-stone-500 hover:text-stone-900 transition-colors">Privacy Policy</a>
+                        <a href="imprint.html" class="text-stone-500 hover:text-stone-900 transition-colors">Imprint</a>
+                        <a href="cookies.html" class="text-stone-500 hover:text-stone-900 transition-colors">Cookie Policy</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="pt-1 text-center text-xs text-stone-500">
+                <span data-i18n="footer.copyright">© 2026 Sager House. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
 
     <!-- Application Script -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>

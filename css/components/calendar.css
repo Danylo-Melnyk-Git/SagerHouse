@@ -75,40 +75,28 @@
     text-transform: uppercase;
 }
 
-#calendar-widget .flatpickr-rContainer,
-#calendar-widget .flatpickr-days,
-#calendar-widget .dayContainer {
+#calendar-widget .flatpickr-rContainer {
     width: 100% !important;
     max-width: 100% !important;
 }
 
+/* Force day area to fill the calendar width */
 #calendar-widget .flatpickr-days {
-    display: flex;
-}
-
-#calendar-widget .flatpickr-dayContainer {
-    min-width: 0 !important;
-}
-
-#calendar-widget .flatpickr-dayContainer:only-child {
     width: 100% !important;
     max-width: 100% !important;
 }
 
-#calendar-widget .flatpickr-dayContainer:not(:only-child) {
-    width: 50% !important;
-    max-width: 50% !important;
-}
-
-#calendar-widget .flatpickr-dayContainer + .flatpickr-dayContainer {
-    border-left: 1px solid rgb(231, 229, 228);
-    padding-left: 0.75rem;
-    margin-left: 0.75rem;
+/* Each month container fills its share of space (50% in 2-month, 100% in 1-month) */
+#calendar-widget .dayContainer {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 #calendar-widget .flatpickr-day {
-    flex: 0 0 calc(100% / 7);
-    max-width: calc(100% / 7);
     border-radius: 0.62rem;
     border: 1px solid transparent;
     color: rgb(41, 37, 36);
@@ -116,6 +104,17 @@
     height: 3.22rem;
     line-height: 3.22rem;
     font-size: 1.27rem;
+    /* Override Flatpickr's hardcoded 39px max-width so cells fill the row */
+    flex-basis: calc(100% / 7) !important;
+    max-width: calc(100% / 7) !important;
+    width: calc(100% / 7) !important;
+}
+
+/* Keep a thin visual separator between months, no extra padding/margin */
+#calendar-widget .flatpickr-dayContainer + .flatpickr-dayContainer {
+    border-left: 1px solid rgb(231, 229, 228);
+    padding-left: 0;
+    margin-left: 0;
 }
 
 #calendar-widget .flatpickr-day.today {
@@ -144,6 +143,17 @@
 #calendar-widget .flatpickr-day.inRange {
     background: rgb(87, 83, 78) !important;
     border-color: rgb(87, 83, 78) !important;
+    /* No rounded corners between in-range cells → continuous grey band */
+    border-radius: 0 !important;
+}
+
+/* Only round the start and end edges of the selected range */
+#calendar-widget .flatpickr-day.startRange:not(.endRange) {
+    border-radius: 0.62rem 0 0 0.62rem !important;
+}
+
+#calendar-widget .flatpickr-day.endRange:not(.startRange) {
+    border-radius: 0 0.62rem 0.62rem 0 !important;
 }
 
 #calendar-widget .flatpickr-day.today.selected,
@@ -187,11 +197,12 @@
     background: rgb(87, 83, 78);
     color: rgb(250, 250, 249);
     border-radius: 9999px;
-    padding: 0.5rem 1.05rem;
+    padding: 0.6rem 1.5rem;
     font-size: 0.78rem;
     font-weight: 600;
     box-shadow: 0 6px 16px rgba(28, 25, 23, 0.18);
     transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    white-space: nowrap;
 }
 
 .calendar-to-reserve-btn:hover:not(:disabled) {

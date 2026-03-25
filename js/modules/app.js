@@ -7,10 +7,8 @@ import { initGallery } from './gallery.js';
 import { setupBookingCalendar } from './calendar.js';
 import { enhanceHeroImage } from './hero.js';
 import { initBookingForm } from './bookingForm.js';
-import { loadPartials } from './partials.js';
 
 async function initializeApp() {
-    await loadPartials();
     initThemeToggle();
     initI18n();
     initMobileMenu();

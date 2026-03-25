@@ -2,6 +2,7 @@ import { translations } from './translations.js';
 
 const BASE_URL = 'https://sagerhouse.com/';
 const DEFAULT_LANGUAGE = 'en';
+const OG_IMAGE_URL = `${BASE_URL}images/og-share.jpg`;
 const LANGUAGE_URLS = {
     en: BASE_URL,
     de: `${BASE_URL}?lang=de`,
@@ -170,16 +171,16 @@ function buildStructuredData(lang) {
         '@context': 'https://schema.org',
         '@graph': [
             {
-                '@type': 'LodgingBusiness',
+                '@type': ['LodgingBusiness', 'ApartmentComplex'],
                 '@id': `${pageUrl}#lodging`,
                 name: 'Sager House',
                 alternateName: ['Sager Haus', 'SAGER-HAUS'],
                 url: pageUrl,
                 description: seo.description,
                 image: [
-                    'https://sagerhouse.com/images/798174616.jpg',
-                    'https://sagerhouse.com/images/798174623.jpg',
-                    'https://sagerhouse.com/images/mauntin.jpg'
+                    'https://sagerhouse.com/images/798174616.avif',
+                    'https://sagerhouse.com/images/798174623.avif',
+                    'https://sagerhouse.com/images/mauntin.avif'
                 ],
                 telephone: '+380 50 652 62 08',
                 email: 'sager.apart.house@gmail.com',
@@ -187,7 +188,7 @@ function buildStructuredData(lang) {
                 inLanguage: activeLanguage,
                 keywords: seo.keywords,
                 checkinTime: '15:00',
-                checkoutTime: '12:00',
+                checkoutTime: '10:00',
                 availableLanguage: Object.values(LANGUAGE_NAMES),
                 areaServed: ['AT', 'DE', 'SK', 'CZ', 'HU', 'UA', 'EU'],
                 address: {
@@ -198,6 +199,12 @@ function buildStructuredData(lang) {
                     postalCode: '8850',
                     addressCountry: 'AT'
                 },
+                geo: {
+                    '@type': 'GeoCoordinates',
+                    latitude: 47.1101,
+                    longitude: 14.1706
+                },
+                hasMap: 'https://www.google.com/maps/place/Sankt-Leonhard-Platz+2%2F1,+8850+Murau,+Austria',
                 amenityFeature: [
                     {
                         '@type': 'LocationFeatureSpecification',
@@ -217,6 +224,26 @@ function buildStructuredData(lang) {
                     {
                         '@type': 'LocationFeatureSpecification',
                         name: activeTranslations['feature.kitchen'] || translations.en['feature.kitchen'],
+                        value: true
+                    },
+                    {
+                        '@type': 'LocationFeatureSpecification',
+                        name: activeTranslations['feature.dishwasher'] || translations.en['feature.dishwasher'],
+                        value: true
+                    },
+                    {
+                        '@type': 'LocationFeatureSpecification',
+                        name: activeTranslations['feature.coffee-machine'] || translations.en['feature.coffee-machine'],
+                        value: true
+                    },
+                    {
+                        '@type': 'LocationFeatureSpecification',
+                        name: activeTranslations['feature.separate-entrance'] || translations.en['feature.separate-entrance'],
+                        value: true
+                    },
+                    {
+                        '@type': 'LocationFeatureSpecification',
+                        name: activeTranslations['feature.massage-chair'] || translations.en['feature.massage-chair'],
                         value: true
                     }
                 ]
@@ -266,10 +293,13 @@ function applySeo(lang) {
     setMetaContent('#seo-og-title', seo.title);
     setMetaContent('#seo-og-description', seo.description);
     setMetaContent('#seo-og-url', pageUrl);
+    setMetaContent('#seo-og-image', OG_IMAGE_URL);
+    setMetaContent('#seo-og-image-secure', OG_IMAGE_URL);
     setMetaContent('#seo-og-locale', OG_LOCALES[activeLanguage] || OG_LOCALES[DEFAULT_LANGUAGE]);
     setMetaContent('#seo-og-image-alt', seo.imageAlt);
     setMetaContent('#seo-twitter-title', seo.title);
     setMetaContent('#seo-twitter-description', seo.description);
+    setMetaContent('#seo-twitter-image', OG_IMAGE_URL);
     setMetaContent('#seo-twitter-image-alt', seo.imageAlt);
 
     const canonical = document.querySelector('#seo-canonical');

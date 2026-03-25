@@ -52,6 +52,16 @@ const translations = {
         'apartment.apt3-size': '75 m²',
         'apartment.apt3-sleeps': 'Sleeps 6 people',
         'apartment.apt3-amenities': '2 Bedrooms, Sofa Bed (2 additional guests), Fully Equipped Kitchen, Dishwasher, Coffee Machine, High-Speed WiFi, Separate Entrance, Fireplace, Central Heating',
+
+        // Apartment 4
+        'apartment.apt4-title': 'Apartment 4',
+        'apartment.apt4-size': '72 m²',
+        'apartment.apt4-sleeps': 'Sleeps 5 people',
+
+        // Apartment 5
+        'apartment.apt5-title': 'Apartment 5',
+        'apartment.apt5-size': '80 m²',
+        'apartment.apt5-sleeps': 'Sleeps 6 people',
         
         'feature.bedroom': '1 Double Bedroom',
         'feature.sleeps': 'Sleeps 4 people',
@@ -203,6 +213,14 @@ const translations = {
         'apartment.request': 'Buchung anfordern',
         'apartment.coming-soon': 'In Kürze verfügbar',
         'apartment.not-available': 'Derzeit nicht für Buchungen verfügbar. Wir bereiten es für Ihren Komfort vor.',
+
+        'apartment.apt4-title': 'Apartment 4',
+        'apartment.apt4-size': '72 m²',
+        'apartment.apt4-sleeps': 'Platz für 5 Personen',
+
+        'apartment.apt5-title': 'Apartment 5',
+        'apartment.apt5-size': '80 m²',
+        'apartment.apt5-sleeps': 'Platz für 6 Personen',
         
         'feature.bedroom': '1 Doppelzimmer',
         'feature.sleeps': 'Platz für 4 Personen',
@@ -354,6 +372,14 @@ const translations = {
         'apartment.request': 'Запросити бронювання',
         'apartment.coming-soon': 'Невдовзи',
         'apartment.not-available': 'Наразі недоступно для бронювання. Ми готуємо його для вашого комфорту.',
+
+        'apartment.apt4-title': 'Апартамент 4',
+        'apartment.apt4-size': '72 м²',
+        'apartment.apt4-sleeps': 'Місця для 5 осіб',
+
+        'apartment.apt5-title': 'Апартамент 5',
+        'apartment.apt5-size': '80 м²',
+        'apartment.apt5-sleeps': 'Місця для 6 осіб',
         
         'feature.bedroom': '1 спальня з двоспальним ліжком',
         'feature.sleeps': 'Місця для 4 осіб',
@@ -505,6 +531,14 @@ const translations = {
         'apartment.request': 'Запросить бронь',
         'apartment.coming-soon': 'Скоро',
         'apartment.not-available': 'В настоящее время недоступен для бронирования. Мы готовим его для вашего комфорта.',
+
+        'apartment.apt4-title': 'Апартамент 4',
+        'apartment.apt4-size': '72 м²',
+        'apartment.apt4-sleeps': 'Места для 5 человек',
+
+        'apartment.apt5-title': 'Апартамент 5',
+        'apartment.apt5-size': '80 м²',
+        'apartment.apt5-sleeps': 'Места для 6 человек',
         
         'feature.bedroom': '1 спальня с двуспальной кроватью',
         'feature.sleeps': 'Места для 4 человек',
@@ -668,6 +702,14 @@ const translations = {
         'apartment.apt3-sleeps': 'Pre 6 osôb',
         'apartment.apt3-amenities': '2 spálne, rozkladacia pohovka (2 ďalší hostia), plne vybavená kuchyňa, umývačka riadu, kávovar, vysokorýchlostné Wi-Fi, samostatný vchod, krb, centrálne kúrenie',
 
+        'apartment.apt4-title': 'Apartmán 4',
+        'apartment.apt4-size': '72 m²',
+        'apartment.apt4-sleeps': 'Pre 5 osôb',
+
+        'apartment.apt5-title': 'Apartmán 5',
+        'apartment.apt5-size': '80 m²',
+        'apartment.apt5-sleeps': 'Pre 6 osôb',
+
         'feature.bedroom': '1 dvojlôžková spálňa',
         'feature.sleeps': 'Pre 4 osoby',
         'feature.size': '67 m²',
@@ -820,6 +862,14 @@ const translations = {
         'apartment.apt3-sleeps': 'Pro 6 osob',
         'apartment.apt3-amenities': '2 ložnice, rozkládací pohovka (2 další hosté), plně vybavená kuchyně, myčka nádobí, kávovar, vysokorychlostní Wi-Fi, samostatný vstup, krb, centrální vytápění',
 
+        'apartment.apt4-title': 'Apartmán 4',
+        'apartment.apt4-size': '72 m²',
+        'apartment.apt4-sleeps': 'Pro 5 osob',
+
+        'apartment.apt5-title': 'Apartmán 5',
+        'apartment.apt5-size': '80 m²',
+        'apartment.apt5-sleeps': 'Pro 6 osob',
+
         'feature.bedroom': '1 dvoulůžková ložnice',
         'feature.sleeps': 'Pro 4 osoby',
         'feature.size': '67 m²',
@@ -971,6 +1021,14 @@ const translations = {
         'apartment.apt3-size': '75 m²',
         'apartment.apt3-sleeps': '6 fő részére',
         'apartment.apt3-amenities': '2 hálószoba, kinyitható kanapé (2 további vendég), teljesen felszerelt konyha, mosogatógép, kávéfőző, nagy sebességű Wi-Fi, külön bejárat, kandalló, központi fűtés',
+
+        'apartment.apt4-title': '4. apartman',
+        'apartment.apt4-size': '72 m²',
+        'apartment.apt4-sleeps': '5 fő részére',
+
+        'apartment.apt5-title': '5. apartman',
+        'apartment.apt5-size': '80 m²',
+        'apartment.apt5-sleeps': '6 fő részére',
 
         'feature.bedroom': '1 franciaágyas hálószoba',
         'feature.sleeps': '4 fő részére',

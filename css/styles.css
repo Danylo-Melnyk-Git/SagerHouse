@@ -2,6 +2,13 @@
 @import url('./components/calendar.css');
 @import url('./components/theme.css');
 
+/* Global sizing reset because Tailwind preflight is disabled */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 
 /* Hero Section Image Fix */
 .hero-image-container {
@@ -274,6 +281,29 @@ html {
 /* Button and Link Animations */
 button, a {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Apartment cards CTA buttons: keep all 5 cards visually consistent */
+.apartment-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.apartment-cta {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-top: 2rem;
+    text-decoration: none;
+    border: 0;
+}
+
+.apartment-cta-disabled {
+    border: 0;
+    outline: 0;
+    box-shadow: none;
 }
 
 button:hover:not(:disabled) {
