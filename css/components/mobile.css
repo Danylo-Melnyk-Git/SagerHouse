@@ -1,0 +1,563 @@
+/* ================================================================
+   MOBILE OPTIMIZATIONS — SagerHouse
+   Dedicated file for small-viewport fixes (≤639px / below sm:).
+   Loaded last in styles.css — has highest specificity over layout.
+   ================================================================ */
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   1. HERO IMAGE — aspect ratio & spacing on mobile
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 639px) {
+    .hero-top-section {
+        padding-top: 1.1rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .hero-top-copy {
+        gap: 0;
+    }
+
+    .hero-image-frame {
+        margin-top: 2.1rem;
+    }
+
+    /* Keep the mountain cinematic and crop the sides, not the height */
+    .hero-image-container {
+        aspect-ratio: auto !important;
+        height: 14rem !important;
+        min-height: 0;
+    }
+
+    .hero-image-container picture {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover !important;
+        object-position: center 62%;
+        transform: scale(1.08);
+    }
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   2. APARTMENT & PRICE CARDS — reduce inner padding
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 639px) {
+    /* Apartment card inner body: p-8 (2rem) → 1.25rem */
+    .apartment-card-body {
+        padding: 1.25rem;
+    }
+
+    #apartments > .mx-auto > .mx-auto.text-center p,
+    #prices > .mx-auto > .mx-auto.text-center p {
+        margin-top: 0.75rem;
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    #apartments > .mx-auto > .mt-16.grid {
+        margin-top: 2.25rem;
+        row-gap: 1.5rem;
+    }
+
+    .apartment-card-body h3 {
+        font-size: 1.6rem;
+        line-height: 1.15;
+    }
+
+    .apartment-card-body .mt-4.flex.flex-wrap {
+        margin-top: 0.8rem;
+        gap: 0.7rem;
+        font-size: 0.78rem;
+    }
+
+    .apartment-card-body h4 {
+        margin-top: 1.15rem;
+        font-size: 0.95rem;
+    }
+
+    .apartment-card-body ul {
+        margin-top: 0.8rem;
+        font-size: 0.95rem;
+        line-height: 1.45;
+    }
+
+    .apartment-card-body ul li {
+        align-items: flex-start;
+        gap: 0.55rem;
+    }
+
+    .apartment-card-body ul iconify-icon {
+        margin-top: 0.15rem;
+        flex-shrink: 0;
+    }
+
+    .apartment-card-body .apartment-cta {
+        margin-top: 1.25rem;
+        padding-top: 0.85rem;
+        padding-bottom: 0.85rem;
+        font-size: 0.92rem;
+    }
+
+    /* Price season card: p-8 (2rem) → 1.25rem */
+    .price-card {
+        padding: 1.25rem;
+    }
+
+    #prices .mt-16.grid {
+        margin-top: 2.25rem;
+        gap: 0.9rem;
+    }
+
+    .price-card h3 {
+        font-size: 0.98rem;
+        line-height: 1.35;
+    }
+
+    .price-card p.mt-6 span.text-3xl {
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    #prices .mt-8.flex.flex-col {
+        margin-top: 1.1rem;
+        gap: 0.65rem;
+        font-size: 0.82rem;
+        line-height: 1.45;
+    }
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   3. CALENDAR — summary & button layout on mobile
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 639px) {
+    .availability-panel {
+        padding-left: 0.7rem !important;
+        padding-right: 0.7rem !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    #calendar-widget {
+        width: 100%;
+        max-width: 18.75rem;
+    }
+
+    #calendar-widget .flatpickr-rContainer,
+    #calendar-widget .flatpickr-days,
+    #calendar-widget .dayContainer,
+    #calendar-widget .flatpickr-dayContainer,
+    #calendar-widget .flatpickr-calendar.inline,
+    #calendar-widget .flatpickr-calendar {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        padding: 0.7rem !important;
+        overflow: hidden;
+    }
+
+    #calendar-widget .flatpickr-weekdays,
+    #calendar-widget .flatpickr-weekdaycontainer {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden;
+    }
+
+    #calendar-widget .flatpickr-months {
+        margin-bottom: 0.6rem;
+        border-radius: 0.7rem;
+    }
+
+    #calendar-widget .flatpickr-months .flatpickr-month {
+        height: 3.05rem;
+    }
+
+    #calendar-widget .flatpickr-current-month {
+        font-size: 1.05rem;
+        font-weight: 800;
+    }
+
+    #calendar-widget .flatpickr-weekday {
+        font-size: 0.76rem;
+        letter-spacing: 0.04em;
+    }
+
+    #calendar-widget .flatpickr-days {
+        gap: 0 !important;
+    }
+
+    #calendar-widget .flatpickr-dayContainer,
+    #calendar-widget .dayContainer {
+        padding: 0.15rem !important;
+        border-radius: 0.7rem;
+    }
+
+    #calendar-widget .flatpickr-day {
+        height: 2.35rem !important;
+        line-height: 2.35rem !important;
+        font-size: 1rem !important;
+        border-radius: 0.55rem;
+    }
+
+    .calendar-selection-summary {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.45rem;
+        padding: 0.35rem 0 0;
+        background: transparent;
+    }
+
+    .calendar-selection-pill {
+        display: block;
+        text-align: center;
+        min-width: 0;
+        padding: 0.7rem 0.85rem;
+        font-size: 0.9rem;
+        box-shadow: none;
+    }
+
+    .calendar-to-reserve-btn {
+        width: 100%;
+        justify-content: center;
+        white-space: normal !important;
+        line-height: 1.35;
+        padding: 0.85rem 1rem;
+        font-size: 0.88rem;
+        box-shadow: none;
+    }
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   4. WHY SECTION — remove forced height in single-column
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 639px) {
+    /* Dark-mode items don't need 10.25rem min-height in 1-col layout */
+    .why-section-shell {
+        border-radius: 1.5rem;
+        overflow: hidden;
+        background: linear-gradient(180deg, rgba(17, 24, 39, 0.98) 0%, rgba(24, 24, 27, 0.96) 100%);
+        padding-top: 1.4rem;
+        padding-bottom: 1.4rem;
+    }
+
+    html.dark-theme .why-section .why-grid-item {
+        min-height: auto;
+    }
+}
+
+.kreischberg-inline-link,
+.kreischberg-inline-link:visited {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+    text-underline-offset: 0.18em;
+    transition: opacity 0.2s ease, text-decoration-thickness 0.2s ease;
+}
+
+.kreischberg-inline-link:hover {
+    color: inherit;
+    opacity: 0.75;
+    text-decoration-thickness: 2px;
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   5. LOCATION — reduce gap between text block and map
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 1023px) {
+    /* gap-16 (4rem) is too much for single-column mobile layout */
+    .location-grid {
+        gap: 2.5rem;
+    }
+
+    .location-map-card {
+        display: none;
+    }
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   6. FAQ — icon top-alignment for multi-line questions
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 639px) {
+    /* When question wraps to 2+ lines, chevron aligns to top — not center */
+    #faq .mt-16.space-y-4 {
+        margin-top: 2.25rem;
+    }
+
+    #faq .mt-16.space-y-4 > * + * {
+        margin-top: 0.7rem;
+    }
+
+    #faq details.group {
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    .faq-item-summary {
+        align-items: flex-start;
+        gap: 0.9rem;
+        font-size: 0.97rem;
+        line-height: 1.45;
+    }
+
+    .faq-toggle-icon {
+        margin-top: 0.15rem;
+        flex-shrink: 0;
+    }
+
+    #faq details.group p {
+        margin-top: 0.7rem;
+        font-size: 0.92rem;
+        line-height: 1.6;
+    }
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   7. HEADER — reduce density on tiny screens (≤479px)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 479px) {
+    /* Tighter side padding on very small phones */
+    .site-header-inner {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+    }
+
+    .site-header-actions {
+        margin-left: auto;
+        gap: 0.55rem;
+        align-items: center;
+    }
+
+    .site-header-actions .theme-toggle,
+    .site-header-actions .mobile-menu-button,
+    .site-header-actions .mobile-header-book-btn {
+        height: 2.5rem;
+        border-radius: 0.8rem;
+    }
+
+    .site-header-actions .theme-toggle,
+    .site-header-actions .mobile-menu-button {
+        width: 2.5rem;
+        min-width: 2.5rem;
+        padding: 0;
+        flex: 0 0 2.5rem;
+    }
+
+    .site-header-actions .mobile-header-book-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0.8rem;
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+
+    .site-header-actions .mobile-menu-button {
+        order: 3;
+        margin-left: 0;
+    }
+
+    .site-header-actions .mobile-header-book-btn {
+        order: 2;
+    }
+
+    .site-header-actions .theme-toggle {
+        order: 1;
+    }
+
+    .booking-form-card {
+        padding-left: 0.9rem !important;
+        padding-right: 0.9rem !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    #booking-form .grid {
+        row-gap: 1rem;
+    }
+
+    #booking-form .mt-2\.5 {
+        margin-top: 0.55rem;
+    }
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   8. MOBILE MENU — custom hamburger and neutral visual system
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.mobile-menu-icon {
+    position: relative;
+    display: inline-flex;
+    width: 1.2rem;
+    height: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mobile-menu-icon span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 9999px;
+    background: currentColor;
+    transform-origin: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mobile-menu-button.is-open .mobile-menu-icon span:nth-child(1) {
+    transform: translateY(0.42rem) rotate(45deg);
+}
+
+.mobile-menu-button.is-open .mobile-menu-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-button.is-open .mobile-menu-icon span:nth-child(3) {
+    transform: translateY(-0.42rem) rotate(-45deg);
+}
+
+@keyframes mobileMenuSlideIn {
+    from {
+        opacity: 0;
+        transform: translate3d(1rem, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@media (max-width: 767px) {
+    .mobile-menu-panel {
+        position: absolute;
+        top: calc(100% + 0.55rem);
+        right: 0.5rem;
+        left: auto;
+        width: min(22rem, calc(100vw - 1rem));
+        border: 1px solid rgba(231, 229, 228, 0.92);
+        border-radius: 1.25rem;
+        overflow: hidden;
+        background: rgb(250, 250, 249) !important;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
+        animation: mobileMenuSlideIn 0.22s ease-out;
+    }
+
+    .mobile-menu-nav {
+        gap: 0.55rem;
+        align-items: stretch;
+    }
+
+    .mobile-menu-link,
+    .mobile-menu-link:visited {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        color: rgb(41, 37, 36) !important;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid rgba(231, 229, 228, 0.9);
+        padding: 0.9rem 1rem;
+        min-height: 3.35rem;
+        display: flex;
+        align-items: center;
+        border-radius: 0.9rem;
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .mobile-menu-link:hover {
+        background: rgb(245, 245, 244);
+        border-color: rgba(214, 211, 209, 0.95);
+    }
+
+    .mobile-menu-actions {
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+
+    .mobile-menu-language-wrap {
+        width: 100%;
+    }
+
+    .mobile-menu-language {
+        width: 100% !important;
+        max-width: none !important;
+        min-height: 3.15rem;
+        border-radius: 0.9rem;
+        background-color: rgba(255, 255, 255, 0.76);
+        border-color: rgba(231, 229, 228, 0.9);
+        color: rgb(41, 37, 36);
+        padding-left: 1rem;
+        padding-right: 2.75rem;
+    }
+
+    .mobile-menu-panel .px-6.py-5 {
+        padding: 1rem;
+    }
+
+    html.dark-theme .mobile-menu-panel {
+        background: rgb(24, 24, 27) !important;
+        border-color: rgba(87, 83, 78, 0.75) !important;
+    }
+
+    html.dark-theme .mobile-menu-link,
+    html.dark-theme .mobile-menu-link:visited {
+        color: rgb(245, 245, 244) !important;
+        background: rgba(39, 39, 42, 0.92);
+        border-color: rgba(87, 83, 78, 0.75);
+    }
+
+    html.dark-theme .mobile-menu-link:hover {
+        background: rgb(55, 55, 61);
+        border-color: rgb(120, 113, 108);
+    }
+
+    html.dark-theme .mobile-menu-language {
+        background-color: rgba(39, 39, 42, 0.92);
+        border-color: rgba(87, 83, 78, 0.75);
+        color: rgb(245, 245, 244);
+    }
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   9. GALLERY — shorter fixed row height on narrow screens
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 639px) {
+    /* Tailwind auto-rows-[200px] → shrink to 160px on mobile */
+    #gallery .grid {
+        grid-auto-rows: 160px;
+    }
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   10. ABOUT COPY & GLOBAL SPACING
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 639px) {
+    .about-copy {
+        margin-top: 1.75rem;
+        font-size: 0.98rem;
+        line-height: 1.7;
+    }
+
+    .about-copy p:nth-child(n + 2) {
+        display: none;
+    }
+
+    .hero-badges-row {
+        margin-top: 2rem;
+    }
+}

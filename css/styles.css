@@ -1,6 +1,7 @@
 
 @import url('./components/calendar.css');
 @import url('./components/theme.css');
+@import url('./components/mobile.css');
 
 /* Global sizing reset because Tailwind preflight is disabled */
 *,
@@ -312,6 +313,34 @@ button:hover:not(:disabled) {
 
 button:active:not(:disabled) {
     transform: translateY(0);
+}
+
+/* Location metric cards: keep consistent spacing and prevent text overflow look */
+.location-metric-card {
+    padding: 1rem 1.1rem;
+    min-height: 6.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.35rem;
+}
+
+.location-metric-title {
+    margin: 0;
+    line-height: 1.25;
+}
+
+.location-metric-text {
+    margin: 0;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+@media (min-width: 640px) {
+    .location-metric-card {
+        padding: 1.1rem 1.2rem;
+        min-height: 6.6rem;
+    }
 }
 
 /* Responsive Gallery */

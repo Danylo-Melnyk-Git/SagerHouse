@@ -4,14 +4,13 @@
 function initMobileMenu() {
     const btn = document.getElementById('mobile-menu-button');
     const menu = document.getElementById('mobile-menu');
-    const icon = document.getElementById('mobile-menu-icon');
 
-    if (!btn || !menu || !icon) return;
+    if (!btn || !menu) return;
 
     const setMenuState = (isOpen) => {
         btn.setAttribute('aria-expanded', String(isOpen));
         menu.classList.toggle('hidden', !isOpen);
-        icon.setAttribute('icon', isOpen ? 'solar:close-linear' : 'solar:menu-list-linear');
+        btn.classList.toggle('is-open', isOpen);
     };
 
     const closeMenu = () => setMenuState(false);

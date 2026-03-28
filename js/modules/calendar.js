@@ -1,9 +1,13 @@
 /**
  * Availability calendar integration and form sync.
  */
-function setupBookingCalendar() {
+function setupBookingCalendar(retryCount = 0) {
     const calendarWidget = document.getElementById('calendar-widget');
     if (!calendarWidget) return;
+
+    if (calendarWidget.dataset.calendarReady === 'true') {
+        return;
+    }
 
     const checkInInput = document.getElementById('check-in');
     const checkOutInput = document.getElementById('check-out');
@@ -13,9 +17,16 @@ function setupBookingCalendar() {
     const toReserveBtn = document.getElementById('calendar-to-reserve');
 
     if (typeof window.flatpickr !== 'function') {
+        if (retryCount < 20) {
+            window.setTimeout(() => setupBookingCalendar(retryCount + 1), 200);
+            return;
+        }
+
         console.warn('Flatpickr is not available, skipping inline calendar setup.');
         return;
     }
+
+    calendarWidget.dataset.calendarReady = 'true';
 
     const toInputDate = (date) => {
         if (!(date instanceof Date)) return '';
@@ -108,6 +119,10 @@ function setupBookingCalendar() {
             }
         }
     });
+
+    if (calendar?.calendarContainer && !calendarWidget.contains(calendar.calendarContainer)) {
+        calendarWidget.replaceChildren(calendar.calendarContainer);
+    }
 
     if (checkInInput) {
         checkInInput.addEventListener('change', () => {

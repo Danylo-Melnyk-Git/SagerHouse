@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Python virtual environments
+.venv/
+venv/
+
+# Local snapshots
+.snapshots/
+
+# Playwright outputs
+playwright-report/
+test-results/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode-test/

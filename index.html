@@ -106,13 +106,8 @@
 
     <!-- 1. Header -->
     <header class="sticky top-0 z-50 border-b border-stone-200/60 bg-stone-50/80 backdrop-blur-md">
-        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+        <div class="site-header-inner mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
             <a href="#" class="text-base font-medium tracking-tighter text-stone-900">SAGERHOUSE</a>
-
-            <button id="mobile-menu-button" type="button" class="md:hidden -mr-2 inline-flex items-center justify-center rounded-md p-2 text-stone-600 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-stone-900" aria-controls="mobile-menu" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-                <iconify-icon id="mobile-menu-icon" icon="solar:menu-list-linear" class="text-2xl"></iconify-icon>
-            </button>
 
             <nav class="hidden md:flex items-center gap-x-8 text-sm font-normal">
                 <a href="#apartments" class="text-stone-700 hover:text-stone-900 transition-colors" data-i18n="header.apartments">Apartments</a>
@@ -124,7 +119,7 @@
                 <a href="#contact" class="text-stone-700 hover:text-stone-900 transition-colors" data-i18n="header.contact">Contact</a>
             </nav>
 
-            <div class="flex items-center gap-x-6">
+            <div class="site-header-actions flex items-center gap-x-6">
                 <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle dark theme" title="Toggle dark theme">
                     <iconify-icon data-theme-icon icon="solar:moon-linear"></iconify-icon>
                 </button>
@@ -140,29 +135,34 @@
                         <option value="hu">HU</option>
                     </select>
                 </div>
-                <a href="#contact" class="rounded-md bg-stone-900 px-4 py-2 text-sm font-medium text-stone-50 shadow-sm hover:bg-stone-800 transition-colors" data-i18n="header.book-now">Book Now</a>
+                <a href="#contact" class="mobile-header-book-btn rounded-md bg-stone-900 px-4 py-2 text-sm font-medium text-stone-50 shadow-sm hover:bg-stone-800 transition-colors" data-i18n="header.book-now">Book Now</a>
+                <button id="mobile-menu-button" type="button" class="mobile-menu-button md:hidden inline-flex items-center justify-center rounded-md p-2 text-stone-600 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-stone-900" aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <span class="mobile-menu-icon" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
             </div>
         </div>
 
-        <div id="mobile-menu" class="md:hidden hidden border-t border-stone-200 bg-white">
+        <div id="mobile-menu" class="mobile-menu-panel md:hidden hidden border-t border-stone-200 bg-white">
             <div class="px-6 py-5">
-                <nav class="flex flex-col gap-2 text-sm font-medium text-stone-700">
-                    <a href="#apartments" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.apartments">Apartments</a>
-                    <a href="#prices" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.prices">Prices</a>
-                    <a href="#availability" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.availability">Availability</a>
-                    <a href="#gallery" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.gallery">Gallery</a>
-                    <a href="#location" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.location">Location</a>
-                    <a href="#faq" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.faq">FAQ</a>
-                    <a href="#contact" class="rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.contact">Contact</a>
+                <nav class="mobile-menu-nav flex flex-col gap-2 text-sm font-medium text-stone-700">
+                    <a href="#apartments" class="mobile-menu-link rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.apartments">Apartments</a>
+                    <a href="#prices" class="mobile-menu-link rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.prices">Prices</a>
+                    <a href="#availability" class="mobile-menu-link rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.availability">Availability</a>
+                    <a href="#gallery" class="mobile-menu-link rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.gallery">Gallery</a>
+                    <a href="#location" class="mobile-menu-link rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.location">Location</a>
+                    <a href="#faq" class="mobile-menu-link rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.faq">FAQ</a>
+                    <a href="#contact" class="mobile-menu-link rounded-md px-3 py-2 hover:bg-stone-100" data-i18n="header.contact">Contact</a>
                 </nav>
 
-                <div class="mt-5 flex flex-col gap-3 border-t border-stone-200 pt-5">
-                    <button type="button" class="theme-toggle theme-toggle-mobile" data-theme-toggle aria-label="Toggle dark theme" title="Toggle dark theme">
-                        <iconify-icon data-theme-icon icon="solar:moon-linear"></iconify-icon>
-                    </button>
-                    <div>
+                <div class="mobile-menu-actions mt-5 flex flex-col gap-3 border-t border-stone-200 pt-5">
+                    <div class="mobile-menu-language-wrap">
                         <label for="mobile-language-select" class="sr-only">Choose language</label>
-                        <select id="mobile-language-select" class="lang-select lang-select-mobile" data-lang-select aria-label="Choose language">
+                        <select id="mobile-language-select" class="lang-select lang-select-mobile mobile-menu-language" data-lang-select aria-label="Choose language">
                             <option value="en">EN</option>
                             <option value="de">DE</option>
                             <option value="uk">UK</option>
@@ -172,15 +172,14 @@
                             <option value="hu">HU</option>
                         </select>
                     </div>
-                    <a href="#contact" class="block rounded-md bg-stone-900 px-4 py-2 text-center text-sm font-medium text-stone-50 hover:bg-stone-800 transition-colors" data-i18n="header.book-now">Book Now</a>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- 2. Hero Section -->
-    <section class="relative isolate overflow-hidden pt-14 pb-24 sm:pt-24 sm:pb-32 lg:pb-40">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center text-center">
+    <section class="hero-top-section relative isolate overflow-hidden pt-14 pb-24 sm:pt-24 sm:pb-32 lg:pb-40">
+        <div class="hero-top-copy mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center text-center">
             <h1 class="max-w-4xl text-4xl font-medium tracking-tight text-stone-900 sm:text-6xl lg:text-7xl" data-i18n="hero.title">
                 Sager House – Boutique Apartments in Murau, Austria
             </h1>
@@ -192,7 +191,7 @@
                 <a href="#contact" class="w-full sm:w-auto rounded-md bg-transparent border border-stone-200 px-6 py-3 text-sm font-medium text-stone-900 hover:bg-stone-100 transition-colors" data-i18n="hero.request-booking">Request Booking</a>
             </div>
             
-            <div class="mt-16 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-stone-500 font-medium">
+            <div class="hero-badges-row mt-16 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-stone-500 font-medium">
                 <div class="flex items-center gap-x-2"><iconify-icon icon="solar:tag-price-linear" class="text-lg"></iconify-icon> <span data-i18n="hero.from-price">From €100 per night</span></div>
                 <div class="flex items-center gap-x-2"><iconify-icon icon="solar:users-group-rounded-linear" class="text-lg"></iconify-icon> <span data-i18n="hero.guests">Up to 6 guests</span></div>
                 <div class="flex items-center gap-x-2"><iconify-icon icon="solar:wifi-router-linear" class="text-lg"></iconify-icon> <span data-i18n="hero.wifi">Free WiFi</span></div>
@@ -201,7 +200,7 @@
             </div>
         </div>
         
-        <div class="mx-auto mt-16 max-w-7xl px-6 lg:px-8">
+        <div class="hero-image-frame mx-auto mt-16 max-w-7xl px-6 lg:px-8">
             <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl bg-stone-100 shadow-sm ring-1 ring-stone-900/5 hero-image-container">
                 <picture>
                   <source srcset="images/mauntin.avif" type="image/avif">
@@ -216,7 +215,7 @@
     <section class="border-t border-stone-200/60 bg-stone-50 py-24 sm:py-32">
         <div class="mx-auto max-w-3xl px-6 text-center lg:px-8">
             <h2 class="text-3xl font-medium tracking-tight text-stone-900 sm:text-4xl" data-i18n="about.title">Your Holiday Apartment in Murau, Styria</h2>
-            <div class="mt-10 space-y-8 text-base leading-relaxed text-stone-600 text-left">
+            <div class="about-copy mt-10 space-y-8 text-base leading-relaxed text-stone-600 text-left">
                 <p data-i18n="about.para1">Welcome to Sager House, where alpine charm seamlessly blends with modern comfort. Nestled in the historic village of Murau, our premium apartments offer an idyllic retreat for those seeking a true stay in the Austrian Alps. Every detail of our accommodation in Murau, Styria, has been thoughtfully designed with natural stone, warm woods, and soft neutrals to create a calming, luxurious atmosphere.</p>
                 <p data-i18n="about.para2">During the winter months, Sager House serves as the perfect Murau ski holiday apartment. Located just minutes from the renowned Kreischberg ski area, guests enjoy effortless access to pristine slopes, modern lifts, and snow-covered winter landscapes. After a long day on the mountain, return to your cozy sanctuary to relax and unwind.</p>
                 <p data-i18n="about.para3">When the snow melts, the region transforms into a paradise for outdoor enthusiasts. Enjoy summer hiking in Murau right from your doorstep, with endless trails winding through lush alpine meadows and dense forests. Whether you are seeking an active holiday or a peaceful escape in the heart of nature, our apartments in Murau provide the ultimate foundation for an authentic Austrian experience.</p>
@@ -243,7 +242,7 @@
                           <img src="images/798174623.jpg" alt="The Sager Apartment" width="1200" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover">
                         </picture>
                     </div>
-                    <div class="p-8 flex flex-col flex-1 w-full">
+                    <div class="p-8 flex flex-col flex-1 w-full apartment-card-body">
                         <h3 class="text-xl font-medium tracking-tight text-stone-900" data-i18n="apartment.apt1-title">The Sager Apartment</h3>
                         <div class="mt-4 flex flex-wrap gap-4 text-xs text-stone-500">
                             <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span data-i18n="apartment.apt1-size">67 m²</span></span>
@@ -281,7 +280,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-8 flex flex-col flex-1 w-full">
+                    <div class="p-8 flex flex-col flex-1 w-full apartment-card-body">
                         <h3 class="text-xl font-medium tracking-tight text-stone-900" data-i18n="apartment.apt2-title">Apartment 2</h3>
                         <div class="mt-4 flex flex-wrap gap-4 text-xs text-stone-500">
                             <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span data-i18n="apartment.apt2-size">70 m²</span></span>
@@ -318,7 +317,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-8 flex flex-col flex-1 w-full">
+                    <div class="p-8 flex flex-col flex-1 w-full apartment-card-body">
                         <h3 class="text-xl font-medium tracking-tight text-stone-900" data-i18n="apartment.apt3-title">Apartment 3</h3>
                         <div class="mt-4 flex flex-wrap gap-4 text-xs text-stone-500">
                             <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span data-i18n="apartment.apt3-size">75 m²</span></span>
@@ -355,7 +354,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-8 flex flex-col flex-1 w-full">
+                    <div class="p-8 flex flex-col flex-1 w-full apartment-card-body">
                         <h3 class="text-xl font-medium tracking-tight text-stone-900" data-i18n="apartment.apt4-title">Apartment 4</h3>
                         <div class="mt-4 flex flex-wrap gap-4 text-xs text-stone-500">
                             <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span data-i18n="apartment.apt4-size">72 m²</span></span>
@@ -392,7 +391,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-8 flex flex-col flex-1 w-full">
+                    <div class="p-8 flex flex-col flex-1 w-full apartment-card-body">
                         <h3 class="text-xl font-medium tracking-tight text-stone-900" data-i18n="apartment.apt5-title">Apartment 5</h3>
                         <div class="mt-4 flex flex-wrap gap-4 text-xs text-stone-500">
                             <span class="flex items-center gap-1"><iconify-icon icon="solar:ruler-linear" class="text-base"></iconify-icon> <span data-i18n="apartment.apt5-size">80 m²</span></span>
@@ -428,7 +427,7 @@
                     <div class="calendar-selection-pill"><strong>Check-in:</strong> <span id="calendar-checkin-value">-</span></div>
                     <div class="calendar-selection-pill"><strong>Check-out:</strong> <span id="calendar-checkout-value">-</span></div>
                     <div class="calendar-selection-pill"><strong>Nights:</strong> <span id="calendar-nights-value">0</span></div>
-                    <button id="calendar-to-reserve" type="button" class="calendar-to-reserve-btn" disabled>Use dates in Reserve Your Stay</button>
+                    <button id="calendar-to-reserve" type="button" class="calendar-to-reserve-btn" disabled>Use dates in booking form</button>
                 </div>
             </div>
         </div>
@@ -443,7 +442,7 @@
             </div>
 
             <div class="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
-                <div class="rounded-2xl ring-1 ring-stone-200 p-8 flex flex-col justify-between">
+                <div class="price-card rounded-2xl ring-1 ring-stone-200 p-8 flex flex-col justify-between">
                     <div>
                         <h3 class="text-base font-medium text-stone-900 flex items-center gap-2"><iconify-icon icon="solar:snowflake-linear" class="text-lg text-blue-400"></iconify-icon> <span data-i18n="prices.winter">Winter Season</span></h3>
                         <p class="mt-2 text-xs text-stone-500">Dec 15 - Mar 31</p>
@@ -454,7 +453,7 @@
                     </div>
                 </div>
 
-                <div class="rounded-2xl ring-1 ring-stone-200 p-8 flex flex-col justify-between">
+                <div class="price-card rounded-2xl ring-1 ring-stone-200 p-8 flex flex-col justify-between">
                     <div>
                         <h3 class="text-base font-medium text-stone-900 flex items-center gap-2"><iconify-icon icon="solar:sun-linear" class="text-lg text-amber-500"></iconify-icon> <span data-i18n="prices.summer">Summer Season</span></h3>
                         <p class="mt-2 text-xs text-stone-500">Jun 15 - Sep 15</p>
@@ -465,7 +464,7 @@
                     </div>
                 </div>
 
-                <div class="rounded-2xl ring-1 ring-stone-200 p-8 flex flex-col justify-between">
+                <div class="price-card rounded-2xl ring-1 ring-stone-200 p-8 flex flex-col justify-between">
                     <div>
                         <h3 class="text-base font-medium text-stone-900 flex items-center gap-2"><iconify-icon icon="solar:leaf-linear" class="text-lg text-emerald-500"></iconify-icon> <span data-i18n="prices.mid">Mid Season</span></h3>
                         <p class="mt-2 text-xs text-stone-500">Apr 1 - Jun 14 and Sep 16 - Dec 14</p>
@@ -489,7 +488,7 @@
 
 <!-- 8. Why Stay at Sager House -->
     <section class="why-section border-t border-stone-200/60 bg-stone-900 py-24 sm:py-32">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="why-section-shell mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <h2 class="text-3xl font-medium tracking-tight text-stone-50 sm:text-4xl" data-i18n="why.title">Why Choose Our Murau Accommodation</h2>
             </div>
@@ -501,9 +500,9 @@
                     <dd class="text-sm text-stone-400" data-i18n="why.proximity-desc">Walking distance to Murau town center</dd>
                 </div>
                 <div class="why-grid-item flex flex-col gap-y-3 border-l border-stone-700 pl-6">
-                    <iconify-icon icon="solar:skis-linear" class="text-2xl text-stone-400"></iconify-icon>
+                    <iconify-icon icon="solar:snowflake-linear" class="text-2xl text-stone-400"></iconify-icon>
                     <dt class="text-sm font-medium text-stone-100" data-i18n="why.ski">Ski Resort Access</dt>
-                    <dd class="text-sm text-stone-400 flex items-center gap-2" data-i18n="why.ski-desc"><iconify-icon icon="solar:clock-circle-linear" class="text-base text-stone-500"></iconify-icon>10 minutes to Kreischberg ski resort</dd>
+                    <dd class="text-sm text-stone-400 flex items-center gap-2" data-i18n="why.ski-desc"><iconify-icon icon="solar:clock-circle-linear" class="text-base text-stone-500"></iconify-icon>10 minutes to <a class="kreischberg-inline-link" href="https://www.kreischberg.at" target="_blank" rel="noopener noreferrer">Kreischberg</a> ski resort</dd>
                 </div>
                 <div class="why-grid-item flex flex-col gap-y-3 border-l border-stone-700 pl-6">
                     <iconify-icon icon="solar:car-linear" class="text-2xl text-stone-400"></iconify-icon>
@@ -516,12 +515,12 @@
                     <dd class="text-sm text-stone-400" data-i18n="why.kitchen-desc">Modern, fully equipped cooking facilities</dd>
                 </div>
                 <div class="why-grid-item flex flex-col gap-y-3 border-l border-stone-700 pl-6">
-                    <iconify-icon icon="solar:users-group-two-rounded-linear" class="text-2xl text-stone-400"></iconify-icon>
+                    <iconify-icon icon="solar:users-group-rounded-linear" class="text-2xl text-stone-400"></iconify-icon>
                     <dt class="text-sm font-medium text-stone-100" data-i18n="why.family">Family Friendly</dt>
                     <dd class="text-sm text-stone-400" data-i18n="why.family-desc">Perfect Retreat for All Ages</dd>
                 </div>
                 <div class="why-grid-item flex flex-col gap-y-3 border-l border-stone-700 pl-6">
-                    <iconify-icon icon="solar:moon-sleep-linear" class="text-2xl text-stone-400"></iconify-icon>
+                    <iconify-icon icon="solar:moon-linear" class="text-2xl text-stone-400"></iconify-icon>
                     <dt class="text-sm font-medium text-stone-100" data-i18n="why.quiet">Quiet Surroundings</dt>
                     <dd class="text-sm text-stone-400" data-i18n="why.quiet-desc">Peaceful area for ultimate relaxation</dd>
                 </div>
@@ -531,7 +530,7 @@
                     <dd class="text-sm text-stone-400 flex items-center gap-2" data-i18n="why.views-desc"><iconify-icon icon="solar:mountain-linear" class="text-base text-stone-500"></iconify-icon>Breathtaking Alpine Scenery</dd>
                 </div>
                 <div class="why-grid-item flex flex-col gap-y-3 border-l border-stone-700 pl-6">
-                    <iconify-icon icon="solar:signpost-2-linear" class="text-2xl text-stone-400"></iconify-icon>
+                    <iconify-icon icon="solar:clock-circle-linear" class="text-2xl text-stone-400"></iconify-icon>
                     <dt class="text-sm font-medium text-stone-100" data-i18n="why.activities">Year-round Activities</dt>
                     <dd class="text-sm text-stone-400" data-i18n="why.activities-desc">Ideal for ski and hiking holidays</dd>
                 </div>
@@ -596,7 +595,7 @@
 
     <!-- 10. Location Section -->
     <section id="location" class="border-t border-stone-200/60 bg-stone-50 py-24 sm:py-32">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="location-grid mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
                 <h2 class="text-3xl font-medium tracking-tight text-stone-900 sm:text-4xl" data-i18n="location.title">Location – Stay in the Heart of Murau</h2>
                 <div class="mt-6 space-y-6 text-base text-stone-600">
@@ -607,27 +606,27 @@
                     <a href="https://www.google.com/maps/dir/?api=1&destination=Sankt-Leonhard-Platz+2%2F1%2C+8850+Murau%2C+Austria" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-stone-900 hover:text-stone-600 underline underline-offset-4 transition-colors" data-i18n="location.directions">Get Directions</a>
                 </div>
                 <div class="mt-10 grid grid-cols-1 gap-4 px-1 sm:grid-cols-2 sm:px-0">
-                    <div class="rounded-2xl bg-white p-5 ring-1 ring-stone-900/5">
-                        <div class="text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">Distance to Kreischberg</div>
-                        <p class="mt-2 text-sm text-stone-600">About 10 minutes by car to Kreischberg ski resort.</p>
+                    <div class="location-metric-card rounded-2xl bg-white p-5 ring-1 ring-stone-900/5">
+                        <div class="location-metric-title text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">Distance to Kreischberg</div>
+                        <p class="location-metric-text mt-2 text-sm text-stone-600">About 10 minutes by car to Kreischberg ski resort.</p>
                     </div>
-                    <div class="rounded-2xl bg-white p-5 ring-1 ring-stone-900/5">
-                        <div class="text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">Distance to Old Town</div>
-                        <p class="mt-2 text-sm text-stone-600">A short walk brings you to Murau old town, cafes, and restaurants.</p>
+                    <div class="location-metric-card rounded-2xl bg-white p-5 ring-1 ring-stone-900/5">
+                        <div class="location-metric-title text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">Distance to Old Town</div>
+                        <p class="location-metric-text mt-2 text-sm text-stone-600">A short walk brings you to Murau old town, cafes, and restaurants.</p>
                     </div>
-                    <div class="rounded-2xl bg-white p-5 ring-1 ring-stone-900/5">
-                        <div class="text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">Parking</div>
-                        <p class="mt-2 text-sm text-stone-600">Free on-site parking is available directly for guests.</p>
+                    <div class="location-metric-card rounded-2xl bg-white p-5 ring-1 ring-stone-900/5">
+                        <div class="location-metric-title text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">Parking</div>
+                        <p class="location-metric-text mt-2 text-sm text-stone-600">Free on-site parking is available directly for guests.</p>
                     </div>
-                    <div class="rounded-2xl bg-white p-5 ring-1 ring-stone-900/5">
-                        <div class="text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">Ski Storage and Hiking Access</div>
-                        <p class="mt-2 text-sm text-stone-600">Dedicated ski storage plus direct access to hiking routes in the Murau area.</p>
+                    <div class="location-metric-card rounded-2xl bg-white p-5 ring-1 ring-stone-900/5">
+                        <div class="location-metric-title text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">Ski Storage and Hiking Access</div>
+                        <p class="location-metric-text mt-2 text-sm text-stone-600">Dedicated ski storage plus direct access to hiking routes in the Murau area.</p>
                     </div>
                 </div>
             </div>
             
             <!-- Map Container -->
-            <div class="aspect-square lg:aspect-video w-full rounded-2xl bg-stone-100 overflow-hidden ring-1 ring-stone-900/5 flex items-center justify-center relative">
+            <div class="location-map-card aspect-square lg:aspect-video w-full rounded-2xl bg-stone-100 overflow-hidden ring-1 ring-stone-900/5 flex items-center justify-center relative">
                 <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=14.1297%2C47.1011%2C14.2097%2C47.1211&layer=mapnik" title="Map showing Sager House location in Murau, Austria" style="border: 0; width: 100%; height: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
@@ -680,7 +679,7 @@
                 </div>
 
                 <!-- Booking Form Side -->
-                <div class="bg-white px-6 py-8 shadow-sm ring-1 ring-stone-900/5 sm:rounded-2xl sm:px-10">
+                <div class="booking-form-card bg-white px-6 py-8 shadow-sm ring-1 ring-stone-900/5 rounded-xl sm:rounded-2xl sm:px-10">
                     <form id="booking-form" action="#" method="POST" class="mx-auto max-w-xl">
                         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                             <div>
@@ -753,72 +752,72 @@
 
             <div class="mt-16 space-y-4">
                 <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
-                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                    <summary class="faq-item-summary flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
                         <span data-i18n="faq.q1">What are the check-in and check-out times?</span>
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-toggle-icon text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
                     </summary>
                     <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a1">Check-in is available from 15:00 (3 PM) onwards. We kindly ask that you check out by 10:00 AM on your day of departure.</p>
                 </details>
                 <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
-                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                    <summary class="faq-item-summary flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
                         <span data-i18n="faq.q2">What is your cancellation policy?</span>
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-toggle-icon text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
                     </summary>
                     <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a2">Cancellations made up to 14 days before arrival are free of charge. Later cancellations or no-shows may incur a fee of up to 100% of the booking amount.</p>
                 </details>
                 <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
-                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                    <summary class="faq-item-summary flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
                         <span data-i18n="faq.q3">Is parking available on site?</span>
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-toggle-icon text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
                     </summary>
                     <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a3">Yes, we provide free private parking for all our guests right at the property.</p>
                 </details>
                 <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
-                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                    <summary class="faq-item-summary flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
                         <span data-i18n="faq.q4">Are pets allowed?</span>
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-toggle-icon text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
                     </summary>
                     <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a4">While we love animals, to maintain our hypoallergenic standards for all guests, we do not allow pets in the apartments.</p>
                 </details>
                 <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
-                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                    <summary class="faq-item-summary flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
                         <span data-i18n="faq.q5">Do you have a ski storage room?</span>
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-toggle-icon text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
                     </summary>
                     <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a5">Yes, we offer a dedicated, heated ski storage room equipped with boot dryers for your convenience.</p>
                 </details>
                 <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
-                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                    <summary class="faq-item-summary flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
                         <span data-i18n="faq.q6">What payment methods do you accept?</span>
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-toggle-icon text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
                     </summary>
                     <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a6">We accept major credit cards (Visa, Mastercard), bank transfers prior to arrival, and cash payments.</p>
                 </details>
                 <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
-                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                    <summary class="faq-item-summary flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
                         <span data-i18n="faq.q7">Is the local tourist tax included?</span>
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-toggle-icon text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
                     </summary>
                     <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a7">The local tourist tax is not included in the nightly rate and will be charged separately upon arrival.</p>
                 </details>
                 <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
-                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                    <summary class="faq-item-summary flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
                         <span data-i18n="faq.q8">Is there a minimum stay requirement?</span>
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-toggle-icon text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
                     </summary>
                     <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a8">We generally require a minimum stay of 3 nights, though this may vary during peak holiday seasons.</p>
                 </details>
                 <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
-                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                    <summary class="faq-item-summary flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
                         <span data-i18n="faq.q9">How many guests can stay?</span>
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-toggle-icon text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
                     </summary>
                     <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a9">The apartment is designed for up to 4 guests: a double bed in the bedroom and a sofa bed in the living room.</p>
                 </details>
                 <details class="group rounded-xl bg-white p-6 ring-1 ring-stone-900/5 open:bg-stone-50 transition-colors">
-                    <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
+                    <summary class="faq-item-summary flex cursor-pointer items-center justify-between text-base font-medium text-stone-900">
                         <span data-i18n="faq.q10">What are the nearby activities?</span>
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-toggle-icon text-xl text-stone-400 group-open:rotate-180 transition-transform"></iconify-icon>
                     </summary>
                     <p class="mt-4 text-sm text-stone-600" data-i18n="faq.a10">Skiing, hiking, mountain biking, wildlife observation, and cultural attractions. The apartment is perfectly positioned for winter sports and summer outdoor adventures.</p>
                 </details>
@@ -836,6 +835,14 @@
                         <a href="https://www.instagram.com/sagerhouse/" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-stone-900 transition-colors" title="Visit our Instagram">
                             <span class="sr-only">Instagram</span>
                             <iconify-icon icon="solar:camera-minimalistic-linear" class="text-xl"></iconify-icon>
+                        </a>
+                        <a href="https://www.airbnb.com/rooms/1589143495324305744" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-stone-900 transition-colors" title="Book on Airbnb">
+                            <span class="sr-only">Airbnb</span>
+                            <iconify-icon icon="simple-icons:airbnb" class="text-xl"></iconify-icon>
+                        </a>
+                        <a href="https://www.booking.com/hotel/at/sager-haus.html" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-stone-900 transition-colors" title="Book on Booking.com">
+                            <span class="sr-only">Booking.com</span>
+                            <iconify-icon icon="simple-icons:bookingdotcom" class="text-xl"></iconify-icon>
                         </a>
                         <a href="https://www.facebook.com/sagerhouse" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-stone-900 transition-colors" title="Visit our Facebook">
                             <span class="sr-only">Facebook</span>
@@ -877,4 +884,5 @@
     <script type="module" src="js/modules/app.js?v=2.0"></script>
 
 </body></html>
+
 

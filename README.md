@@ -2,6 +2,8 @@
 
 Static multilingual website for a holiday apartment in Murau, Austria.
 
+Detailed technical documentation: `ARCHITECTURE.md`.
+
 ## Features
 
 - ES modules architecture (vanilla JavaScript).
