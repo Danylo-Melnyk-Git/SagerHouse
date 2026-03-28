@@ -61,8 +61,9 @@
     <!-- DNS/connection warmup for external origins -->
     <link rel="preconnect" href="https://code.iconify.design" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://api.iconify.design" crossorigin>
     <!-- Hero image: high-priority preload so the browser fetches it as early as possible -->
-    <link rel="preload" as="image" href="images/mauntin.avif" type="image/avif" fetchpriority="high">
+    <link rel="preload" as="image" href="images/mauntin-1200.jpg" type="image/jpeg" fetchpriority="high">
     <!-- Module graph preload: parser sees app.js before the <script> tag is reached -->
     <link rel="modulepreload" href="js/modules/app.js?v=2.0">
     <!-- Non-critical CSS loaded asynchronously -->
@@ -73,6 +74,11 @@
     <!-- Icon web-component: defer so it never blocks LCP -->
     <script defer src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     
+    <!-- theme.css: below-fold dark/light overrides only — load async to unblock render -->
+    <link rel="preload" href="css/components/theme.css?v=20260328-2" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/components/theme.css?v=20260328-2"></noscript>
+    <!-- mobile.css: critical above-fold hero layout — keep synchronous -->
+    <link rel="stylesheet" href="css/components/mobile.css?v=20260328-2">
     <!-- Tailwind CSS (built from config) -->
     <link rel="stylesheet" href="css/tailwind.css?v=20260328-2">
     <!-- Custom Styles -->
@@ -210,9 +216,8 @@
         <div class="hero-image-frame mx-auto mt-36 sm:mt-48 lg:mt-52 max-w-7xl px-6 lg:px-8">
             <div class="aspect-[3/1] sm:aspect-[16/9] w-full overflow-hidden rounded-2xl bg-stone-100 shadow-sm ring-1 ring-stone-900/5 hero-image-container">
                 <picture>
-                                    <source srcset="images/mauntin.avif" type="image/avif">
-                                    <source srcset="images/mauntin.webp" type="image/webp">
-                                    <img src="images/mauntin.jpg" alt="Sager House holiday apartment in Murau, Austria" width="1200" height="900" fetchpriority="high" decoding="sync" class="h-full w-full object-cover object-center">
+                                    <source srcset="images/mauntin-1200.jpg" type="image/jpeg">
+                                    <img src="images/mauntin-1200.jpg" alt="Sager House holiday apartment in Murau, Austria" width="1200" height="900" fetchpriority="high" decoding="async" class="h-full w-full object-cover object-center">
                 </picture>
             </div>
         </div>

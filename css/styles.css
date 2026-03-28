@@ -1,6 +1,5 @@
 
-@import url('./components/theme.css');
-@import url('./components/mobile.css');
+/* theme.css and mobile.css are loaded directly as <link> tags in HTML head to avoid @import chain depth */
 
 /* Global sizing reset because Tailwind preflight is disabled */
 *,
