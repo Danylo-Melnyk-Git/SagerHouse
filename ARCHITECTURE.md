@@ -15,6 +15,8 @@ Sager House is a static multilingual website for a holiday apartment in Murau, A
 - External runtime dependencies (CDN):
   - Flatpickr (availability calendar)
   - Iconify (icons)
+- Development dependency:
+  - Playwright (`@playwright/test`) for mobile smoke tests
 - Hosting model:
   - Static hosting (no backend in this repository)
 
@@ -22,6 +24,8 @@ Sager House is a static multilingual website for a holiday apartment in Murau, A
 
 - Build CSS:
   - `npm run build:css`
+- Run mobile smoke tests:
+  - `npm run test:mobile`
 - Local development server (required because of browser fetch behavior and module loading):
   - `python -m http.server 8000`
   - open `http://localhost:8000`
@@ -37,7 +41,7 @@ Sager House is a static multilingual website for a holiday apartment in Murau, A
   - calendar/form date sync
   - booking form submit
   - SEO metadata updates
-- Styling is split between generated Tailwind output and custom CSS layers.
+- Styling is split between generated Tailwind output and custom CSS layers, including a dedicated mobile override layer.
 
 ## Project Tree
 
@@ -47,11 +51,15 @@ SagerHouse/
   ARCHITECTURE.md
   README.md
   QA_CHECKLIST.md
+  .gitignore
   package.json
+  package-lock.json
+  playwright.config.js
   tailwind.config.js
   robots.txt
   sitemap.xml
   site.webmanifest
+  favicon.ico
   CNAME
   css/
     tailwind.input.css
@@ -60,6 +68,7 @@ SagerHouse/
     components/
       calendar.css
       theme.css
+      mobile.css
   js/
     modules/
       app.js
@@ -69,12 +78,15 @@ SagerHouse/
       hero.js
       i18n.js
       mobileMenu.js
-      partials.js
       seo.js
       translations.js
       README.md
+  tests/
+    mobile.spec.js
   images/
     *.avif (+ jpg/webp variants)
+    favicon-48x48.png
+    favicon-192x192.png
   partials/
     availability.html
     faq.html
@@ -111,8 +123,10 @@ SagerHouse/
   - Gallery item interaction hooks.
 - `js/modules/hero.js`
   - Hero image presentation enhancement.
-- `js/modules/partials.js`
-  - Runtime HTML partial loader for `data-partial` placeholders.
+
+Note:
+
+- `partials/` content is retained in the repository, but the current `index.html` renders sections directly (no active `data-partial` placeholders).
 
 ## UI/State Model
 
@@ -142,7 +156,21 @@ SagerHouse/
 - Custom rules in `css/styles.css` and component files provide:
   - dark theme overrides
   - calendar look-and-feel
+  - mobile-specific spacing and typography tuning (`mobile.css`)
   - interaction and animation refinements
+
+## Testing Architecture
+
+- Automated mobile smoke checks are implemented with Playwright:
+  - Config: `playwright.config.js`
+  - Suite: `tests/mobile.spec.js`
+- Current automated coverage focuses on:
+  - mobile menu behavior
+  - hero image ratio
+  - calendar rendering and date sync
+  - scroll/focus transition from calendar to booking form
+  - mobile visibility rules (e.g. map hidden)
+- Manual checklist remains in `QA_CHECKLIST.md`.
 
 ## Deployment and Operational Notes
 
@@ -162,11 +190,7 @@ SagerHouse/
 ## Recommended Next Architecture Improvements
 
 1. Move booking submit to a small backend endpoint/serverless function and remove Telegram secrets from frontend.
-2. Add basic CI checks:
-   - HTML validation
-
-- link check
-- Lighthouse budget checks
-
-3. Add lightweight smoke tests for i18n/theme/calendar/form flows.
-2. Decide whether partial-based rendering is still part of architecture and remove dead-path module usage if not needed.
+2. Add CI pipeline for `npm run build:css` and `npm run test:mobile`.
+3. Add HTML/link validation and Lighthouse budget checks.
+4. Expand automated tests for i18n/theme and dark-mode visual regressions.
+5. Decide whether `partials/` should stay as an archive/template source or be removed to reduce maintenance surface.

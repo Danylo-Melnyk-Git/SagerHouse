@@ -1,4 +1,6 @@
-<html lang="en" class="scroll-smooth"><head>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="application-name" content="Sager House">
@@ -7,7 +9,6 @@
     <!-- SEO Optimization -->
         <title>Sager House Murau | Holiday Apartment in Austria | Sager Haus</title>
         <meta name="description" id="seo-description" content="Book Sager House in Murau, Austria. Holiday apartment in Styria with mountain views, ski access, hiking, free parking, and modern comfort.">
-        <meta name="keywords" id="seo-keywords" content="Sager House, Sager Haus, SAGER-HAUS, Murau apartment, holiday apartment Murau, Austria apartment, Styria accommodation, ski apartment Murau, hiking holiday Austria">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="author" content="Sager House">
     <meta name="theme-color" content="#111827">
@@ -19,12 +20,12 @@
         <link rel="canonical" id="seo-canonical" href="https://sagerhouse.com/">
         <link rel="alternate" hreflang="x-default" href="https://sagerhouse.com/">
         <link rel="alternate" hreflang="en" href="https://sagerhouse.com/">
-        <link rel="alternate" hreflang="de" href="https://sagerhouse.com/?lang=de">
-        <link rel="alternate" hreflang="uk" href="https://sagerhouse.com/?lang=uk">
-        <link rel="alternate" hreflang="ru" href="https://sagerhouse.com/?lang=ru">
-        <link rel="alternate" hreflang="sk" href="https://sagerhouse.com/?lang=sk">
-        <link rel="alternate" hreflang="cs" href="https://sagerhouse.com/?lang=cs">
-        <link rel="alternate" hreflang="hu" href="https://sagerhouse.com/?lang=hu">
+        <link rel="alternate" hreflang="de" href="https://sagerhouse.com/de/">
+        <link rel="alternate" hreflang="uk" href="https://sagerhouse.com/uk/">
+        <link rel="alternate" hreflang="ru" href="https://sagerhouse.com/ru/">
+        <link rel="alternate" hreflang="sk" href="https://sagerhouse.com/sk/">
+        <link rel="alternate" hreflang="cs" href="https://sagerhouse.com/cs/">
+        <link rel="alternate" hreflang="hu" href="https://sagerhouse.com/hu/">
 
     <!-- OpenGraph Tags -->
         <meta property="og:title" id="seo-og-title" content="Sager House Murau | Holiday Apartment in Austria | Sager Haus">
@@ -55,21 +56,27 @@
         <meta name="twitter:image:alt" id="seo-twitter-image-alt" content="Sager House holiday apartment in Murau, Austria">
 
     <!-- JSON-LD Structured Data (static fallback; JS overwrites with localised version) -->
-        <script type="application/ld+json" id="seo-structured-data">{"@context":"https://schema.org","@graph":[{"@type":["LodgingBusiness","ApartmentComplex"],"@id":"https://sagerhouse.com/#lodging","name":"Sager House","alternateName":["Sager Haus","SAGER-HAUS"],"url":"https://sagerhouse.com/","description":"Book Sager House in Murau, Austria. Holiday apartment in Styria with mountain views, ski access, hiking, free parking, and modern comfort.","image":["https://sagerhouse.com/images/798174616.avif","https://sagerhouse.com/images/798174623.avif","https://sagerhouse.com/images/mauntin.avif"],"telephone":"+380 50 652 62 08","email":"sager.apart.house@gmail.com","priceRange":"€€","checkinTime":"15:00","checkoutTime":"10:00","address":{"@type":"PostalAddress","streetAddress":"Sankt-Leonhard-Platz 2/1","addressLocality":"Murau","addressRegion":"Styria","postalCode":"8850","addressCountry":"AT"},"geo":{"@type":"GeoCoordinates","latitude":47.1101,"longitude":14.1706},"hasMap":"https://www.google.com/maps/place/Sankt-Leonhard-Platz+2%2F1,+8850+Murau,+Austria"},{"@type":"WebSite","@id":"https://sagerhouse.com/#website","url":"https://sagerhouse.com/","name":"Sager House","alternateName":["Sager Haus","SAGER-HAUS"]}]}</script>
+        <script type="application/ld+json" id="seo-structured-data">{"@context":"https://schema.org","@graph":[{"@type":["LodgingBusiness","ApartmentComplex"],"@id":"https://sagerhouse.com/#lodging","name":"Sager House","alternateName":["Sager Haus","SAGER-HAUS"],"url":"https://sagerhouse.com/","description":"Book Sager House in Murau, Austria. Holiday apartment in Styria with mountain views, ski access, hiking, free parking, and modern comfort.","image":["https://sagerhouse.com/images/798174616.avif","https://sagerhouse.com/images/798174623.avif","https://sagerhouse.com/images/mauntin.avif"],"telephone":"+380 50 652 62 08","email":"sager.apart.house@gmail.com","contactPoint":[{"@type":"ContactPoint","telephone":"+380 50 652 62 08","contactType":"booking","url":"https://wa.me/380506526208","availableLanguage":["English","Deutsch","Ukrainian","Russian","Slovak","Czech","Hungarian"],"areaServed":["AT","DE","SK","CZ","HU","UA","EU"]}],"priceRange":"€€","checkinTime":"15:00","checkoutTime":"10:00","address":{"@type":"PostalAddress","streetAddress":"Sankt-Leonhard-Platz 2/1","addressLocality":"Murau","addressRegion":"Styria","postalCode":"8850","addressCountry":"AT"},"geo":{"@type":"GeoCoordinates","latitude":47.1101,"longitude":14.1706},"hasMap":"https://www.google.com/maps/place/Sankt-Leonhard-Platz+2%2F1,+8850+Murau,+Austria"},{"@type":"WebSite","@id":"https://sagerhouse.com/#website","url":"https://sagerhouse.com/","name":"Sager House","alternateName":["Sager Haus","SAGER-HAUS"]}]}</script>
 
-        <script defer src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <!-- DNS/connection warmup for external origins -->
+    <link rel="preconnect" href="https://code.iconify.design" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <!-- Hero image: high-priority preload so the browser fetches it as early as possible -->
+    <link rel="preload" as="image" href="images/mauntin.avif" type="image/avif" fetchpriority="high">
+    <!-- Module graph preload: parser sees app.js before the <script> tag is reached -->
+    <link rel="modulepreload" href="js/modules/app.js?v=2.0">
+    <!-- Non-critical CSS loaded asynchronously -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"></noscript>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-        <link rel="preload" as="image" href="images/mauntin.avif">
+    <link rel="preload" href="css/components/calendar.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/components/calendar.css"></noscript>
+    <!-- Icon web-component: defer so it never blocks LCP -->
+    <script defer src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     
     <!-- Tailwind CSS (built from config) -->
-    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/tailwind.css?v=20260328-2">
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=20260328-2">
     <script>
         (function () {
             const storedTheme = localStorage.getItem('sagerhouse_theme');
@@ -88,7 +95,7 @@
     
     <style>
         body {
-            font-family: 'Manrope', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', sans-serif;
             letter-spacing: 0.005em;
         }
         h1, h2, h3 {
@@ -200,12 +207,12 @@
             </div>
         </div>
         
-        <div class="hero-image-frame mx-auto mt-16 max-w-7xl px-6 lg:px-8">
-            <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl bg-stone-100 shadow-sm ring-1 ring-stone-900/5 hero-image-container">
+        <div class="hero-image-frame mx-auto mt-36 sm:mt-48 lg:mt-52 max-w-7xl px-6 lg:px-8">
+            <div class="aspect-[3/1] sm:aspect-[16/9] w-full overflow-hidden rounded-2xl bg-stone-100 shadow-sm ring-1 ring-stone-900/5 hero-image-container">
                 <picture>
-                  <source srcset="images/mauntin.avif" type="image/avif">
-                  <source srcset="images/mauntin.webp" type="image/webp">
-                  <img src="images/mauntin.jpg" alt="Austrian Alps mountain view near Murau" width="1600" height="900" fetchpriority="high" decoding="async" class="h-full w-full object-cover object-center">
+                                    <source srcset="images/mauntin.avif" type="image/avif">
+                                    <source srcset="images/mauntin.webp" type="image/webp">
+                                    <img src="images/mauntin.jpg" alt="Sager House holiday apartment in Murau, Austria" width="1200" height="900" fetchpriority="high" decoding="sync" class="h-full w-full object-cover object-center">
                 </picture>
             </div>
         </div>
@@ -870,6 +877,7 @@
                         <a href="privacy.html" class="text-stone-500 hover:text-stone-900 transition-colors">Privacy Policy</a>
                         <a href="imprint.html" class="text-stone-500 hover:text-stone-900 transition-colors">Imprint</a>
                         <a href="cookies.html" class="text-stone-500 hover:text-stone-900 transition-colors">Cookie Policy</a>
+                        <a href="facts.html" class="text-stone-500 hover:text-stone-900 transition-colors">Facts</a>
                     </nav>
                 </div>
             </div>
@@ -880,7 +888,7 @@
     </footer>
 
     <!-- Application Script -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script type="module" src="js/modules/app.js?v=2.0"></script>
 
 </body></html>

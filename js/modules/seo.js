@@ -3,14 +3,17 @@ import { translations } from './translations.js';
 const BASE_URL = 'https://sagerhouse.com/';
 const DEFAULT_LANGUAGE = 'en';
 const OG_IMAGE_URL = `${BASE_URL}images/og-share.jpg`;
+const CONTACT_EMAIL = 'sager.apart.house@gmail.com';
+const CONTACT_PHONE = '+380 50 652 62 08';
+const CONTACT_POINT_WA = 'https://wa.me/380506526208';
 const LANGUAGE_URLS = {
     en: BASE_URL,
-    de: `${BASE_URL}?lang=de`,
-    uk: `${BASE_URL}?lang=uk`,
-    ru: `${BASE_URL}?lang=ru`,
-    sk: `${BASE_URL}?lang=sk`,
-    cs: `${BASE_URL}?lang=cs`,
-    hu: `${BASE_URL}?lang=hu`
+    de: `${BASE_URL}de/`,
+    uk: `${BASE_URL}uk/`,
+    ru: `${BASE_URL}ru/`,
+    sk: `${BASE_URL}sk/`,
+    cs: `${BASE_URL}cs/`,
+    hu: `${BASE_URL}hu/`
 };
 
 const OG_LOCALES = {
@@ -182,8 +185,18 @@ function buildStructuredData(lang) {
                     'https://sagerhouse.com/images/798174623.avif',
                     'https://sagerhouse.com/images/mauntin.avif'
                 ],
-                telephone: '+380 50 652 62 08',
-                email: 'sager.apart.house@gmail.com',
+                telephone: CONTACT_PHONE,
+                email: CONTACT_EMAIL,
+                contactPoint: [
+                    {
+                        '@type': 'ContactPoint',
+                        telephone: CONTACT_PHONE,
+                        contactType: 'booking',
+                        availableLanguage: Object.values(LANGUAGE_NAMES),
+                        areaServed: ['AT', 'DE', 'SK', 'CZ', 'HU', 'UA', 'EU'],
+                        url: CONTACT_POINT_WA
+                    }
+                ],
                 priceRange: '€€',
                 inLanguage: activeLanguage,
                 keywords: seo.keywords,
@@ -288,7 +301,6 @@ function applySeo(lang) {
     document.title = seo.title;
 
     setMetaContent('#seo-description', seo.description);
-    setMetaContent('#seo-keywords', seo.keywords);
     setMetaContent('#seo-language', activeLanguage);
     setMetaContent('#seo-og-title', seo.title);
     setMetaContent('#seo-og-description', seo.description);

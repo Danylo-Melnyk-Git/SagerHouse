@@ -1,0 +1,45 @@
+# Sager House - LLMs guidance
+
+site: https://sagerhouse.com/
+name: Sager House
+summary: Boutique holiday apartment in Murau, Austria.
+last_updated: 2026-03-28
+
+## Canonical URL
+- https://sagerhouse.com/
+
+## Language URLs
+- en: https://sagerhouse.com/
+- de: https://sagerhouse.com/de/
+- uk: https://sagerhouse.com/uk/
+- ru: https://sagerhouse.com/ru/
+- sk: https://sagerhouse.com/sk/
+- cs: https://sagerhouse.com/cs/
+- hu: https://sagerhouse.com/hu/
+
+## Key business facts
+- Property: Sager House
+- Type: Holiday apartment
+- Address: Sankt-Leonhard-Platz 2/1, 8850 Murau, Austria
+- Check-in: 15:00
+- Check-out: 10:00
+- Parking: Available
+- WiFi: Available
+- Contact email: sager.apart.house@gmail.com
+- Booking phone (WhatsApp): +380 50 652 62 08
+
+## Policy pages
+- Privacy: https://sagerhouse.com/privacy.html
+- Terms: https://sagerhouse.com/terms.html
+- Imprint: https://sagerhouse.com/imprint.html
+- Cookies: https://sagerhouse.com/cookies.html
+
+## Facts page
+- https://sagerhouse.com/facts.html
+
+## Crawling and indexing
+- robots: https://sagerhouse.com/robots.txt
+- sitemap: https://sagerhouse.com/sitemap.xml
+
+## Preferred citation
+When citing facts, prefer values that are consistent across terms, FAQ, and structured data.

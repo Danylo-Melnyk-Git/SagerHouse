@@ -1,5 +1,4 @@
 
-@import url('./components/calendar.css');
 @import url('./components/theme.css');
 @import url('./components/mobile.css');
 
@@ -40,6 +39,23 @@
     object-position: center;
     display: block;
     filter: brightness(0.95);
+}
+
+/* Hero spacing is controlled here because some mt-* utilities are absent in compiled tailwind.css */
+.hero-image-frame {
+    margin-top: 3.5rem;
+}
+
+@media (min-width: 640px) {
+    .hero-image-frame {
+        margin-top: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-image-frame {
+        margin-top: 4rem;
+    }
 }
 
 /* Gallery Grid Enhanced */

@@ -7,25 +7,33 @@ Detailed technical documentation: `ARCHITECTURE.md`.
 ## Features
 
 - ES modules architecture (vanilla JavaScript).
-- Runtime HTML partials loading via `data-partial`.
 - Dark theme with persisted preference.
 - Multilanguage UI with browser language detection.
 - Availability calendar (Flatpickr) synced with booking form.
 - Booking form submission via Telegram API.
+- Dedicated mobile optimization layer in `css/components/mobile.css`.
+- Mobile smoke tests with Playwright (`npm run test:mobile`).
 
 ## Structure
 
 ```text
 SagerHouse/
   index.html
+  ARCHITECTURE.md
+  .gitignore
   CNAME
   robots.txt
   sitemap.xml
+  site.webmanifest
+  playwright.config.js
+  package.json
+  package-lock.json
   css/
     styles.css
     components/
       calendar.css
       theme.css
+      mobile.css
   js/
     modules/
       app.js
@@ -36,8 +44,10 @@ SagerHouse/
       gallery.js
       hero.js
       mobileMenu.js
-      partials.js
+      seo.js
       README.md
+  tests/
+    mobile.spec.js
   partials/
     header.html
     footer.html
@@ -46,18 +56,27 @@ SagerHouse/
     faq.html
     README.md
   images/
+    favicon-48x48.png
+    favicon-192x192.png
   QA_CHECKLIST.md
 ```
 
 ## Local Development
 
-Partials are loaded through `fetch`, so run a local HTTP server.
+Run a local HTTP server for ES modules and asset loading.
 
 ```bash
 python -m http.server 8000
 ```
 
 Then open: `http://localhost:8000`
+
+## Scripts
+
+```bash
+npm run build:css
+npm run test:mobile
+```
 
 ## SEO
 
@@ -71,5 +90,7 @@ Then open: `http://localhost:8000`
 - UI sections: `partials/*.html`
 - Theme styles: `css/components/theme.css`
 - Calendar styles: `css/components/calendar.css`
+- Mobile overrides: `css/components/mobile.css`
+- Mobile tests: `tests/mobile.spec.js`
 
 Keep canonical URL, sitemap URL, and CNAME aligned with production domain.

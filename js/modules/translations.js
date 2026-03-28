@@ -132,7 +132,7 @@ const translations = {
         'faq.title': 'Frequently Asked Questions',
         
         'faq.q1': 'What are the check-in and check-out times?',
-        'faq.a1': 'Check-in is available between 15:00 and 23:00. Check-out is until 12:00. Early check-in or late check-out may be possible on request – contact us to arrange.',
+        'faq.a1': 'Check-in is available between 15:00 and 23:00. Check-out is until 10:00. Early check-in or late check-out may be possible on request – contact us to arrange.',
         
         'faq.q2': 'What is your cancellation policy?',
         'faq.a2': 'Cancellations up to 14 days before arrival are free of charge. Later cancellations or no-shows may incur fees up to 100% of the booking amount.',
@@ -291,7 +291,7 @@ const translations = {
         'faq.title': 'Häufig gestellte Fragen',
         
         'faq.q1': 'Welche sind die Check-in und Check-out Zeiten?',
-        'faq.a1': 'Der Check-in ist zwischen 15:00 und 23:00 Uhr möglich. Der Check-out wird bis 12:00 Uhr erwartet. Früherer Check-in oder verspäteter Check-out kann auf Anfrage möglich sein – kontaktieren Sie uns.',
+        'faq.a1': 'Der Check-in ist zwischen 15:00 und 23:00 Uhr möglich. Der Check-out wird bis 10:00 Uhr erwartet. Früherer Check-in oder verspäteter Check-out kann auf Anfrage möglich sein – kontaktieren Sie uns.',
         
         'faq.q2': 'Wie ist Ihre Stornierungspolitik?',
         'faq.a2': 'Stornierungen bis 14 Tage vor Ankunft sind kostenlos. Spätere Stornierungen oder Nichterscheinen können Gebühren bis zu 100% des Buchungsbetrags verursachen.',
@@ -450,7 +450,7 @@ const translations = {
         'faq.title': 'Часто задавані питання',
         
         'faq.q1': 'Які час заселення та виселення?',
-        'faq.a1': 'Заселення можливо з 15:00 до 23:00. Виселення очікується до 12:00. Раннє заселення або пізне виселення можливе за запитом – зв\'яжіться з нами.',
+        'faq.a1': 'Заселення можливо з 15:00 до 23:00. Виселення очікується до 10:00. Раннє заселення або пізне виселення можливе за запитом – зв\'яжіться з нами.',
         
         'faq.q2': 'Яка ваша політика скасування?',
         'faq.a2': 'Скасування до 14 днів до прибуття є безкоштовним. Скасування на більш пізній термін або неявка можуть спричинити збори до 100% суми бронювання.',
@@ -609,7 +609,7 @@ const translations = {
         'faq.title': 'Часто задаваемые вопросы',
         
         'faq.q1': 'Какое время заселения и выселения?',
-        'faq.a1': 'Заселение доступно с 15:00 до 23:00. Выселение ожидается до 12:00. Раннее заселение или позднее выселение возможно по запросу – свяжитесь с нами.',
+        'faq.a1': 'Заселение доступно с 15:00 до 23:00. Выселение ожидается до 10:00. Раннее заселение или позднее выселение возможно по запросу – свяжитесь с нами.',
         
         'faq.q2': 'Какова ваша политика отмены?',
         'faq.a2': 'Отмена до 14 дней до прибытия бесплатна. Отмена позже или неявка может повлечь сборы до 100% суммы бронирования.',
@@ -778,7 +778,7 @@ const translations = {
 
         'faq.title': 'Často kladené otázky',
         'faq.q1': 'Aké sú časy príchodu a odchodu?',
-        'faq.a1': 'Check-in je možný od 15:00 do 23:00. Check-out je do 12:00. Skorší príchod alebo neskorší odchod môžu byť možné na požiadanie.',
+        'faq.a1': 'Check-in je možný od 15:00 do 23:00. Check-out je do 10:00. Skorší príchod alebo neskorší odchod môžu byť možné na požiadanie.',
         'faq.q2': 'Aké sú podmienky zrušenia rezervácie?',
         'faq.a2': 'Zrušenie rezervácie do 14 dní pred príchodom je bezplatné. Pri neskoršom zrušení alebo nedostavení sa môže byť účtovaný poplatok až do 100 % ceny rezervácie.',
         'faq.q3': 'Je k dispozícii parkovanie?',
@@ -938,7 +938,7 @@ const translations = {
 
         'faq.title': 'Často kladené otázky',
         'faq.q1': 'Jaké jsou časy příjezdu a odjezdu?',
-        'faq.a1': 'Check-in je možný od 15:00 do 23:00. Check-out je do 12:00. Dřívější příjezd nebo pozdější odjezd může být možný na vyžádání.',
+        'faq.a1': 'Check-in je možný od 15:00 do 23:00. Check-out je do 10:00. Dřívější příjezd nebo pozdější odjezd může být možný na vyžádání.',
         'faq.q2': 'Jaké jsou podmínky zrušení rezervace?',
         'faq.a2': 'Zrušení rezervace do 14 dnů před příjezdem je zdarma. Při pozdějším zrušení nebo nedostavení se může být účtován poplatek až do výše 100 % ceny rezervace.',
         'faq.q3': 'Je k dispozici parkování?',
@@ -1098,7 +1098,7 @@ const translations = {
 
         'faq.title': 'Gyakran ismételt kérdések',
         'faq.q1': 'Mikor lehet bejelentkezni és kijelentkezni?',
-        'faq.a1': 'A bejelentkezés 15:00 és 23:00 között lehetséges. A kijelentkezés 12:00 óráig történik. Korábbi érkezés vagy későbbi távozás kérésre lehetséges lehet.',
+        'faq.a1': 'A bejelentkezés 15:00 és 23:00 között lehetséges. A kijelentkezés 10:00 óráig történik. Korábbi érkezés vagy későbbi távozás kérésre lehetséges lehet.',
         'faq.q2': 'Mi a lemondási szabályzat?',
         'faq.a2': 'Az érkezés előtti 14 napig a lemondás ingyenes. Későbbi lemondás vagy meg nem jelenés esetén a foglalás összegének akár 100%-a is felszámítható.',
         'faq.q3': 'Van parkolási lehetőség?',

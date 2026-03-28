@@ -4,7 +4,8 @@
   "description": "Sager House - Holiday apartment website",
   "scripts": {
     "build:css": "tailwindcss -i ./css/tailwind.input.css -o ./css/tailwind.css --minify",
-    "test:mobile": "playwright test"
+    "test:mobile": "playwright test",
+    "check:seo": "node scripts/seo-consistency-check.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.54.2",
